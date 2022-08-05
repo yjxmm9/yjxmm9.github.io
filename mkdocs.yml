@@ -51,13 +51,13 @@ nav:
   - 技术问题:
     - Problems/index.md
     - Unity3D
-      - UGUI scrollbar置顶显示: Problems/Unity3D/Unity UGUI中scroll bar在游戏中启动界面时没有从最上面显示.md
-      - 导入fbx,运行时模型位置旋转错误: Problems/Unity3D/Unity导入fbx模型后,运行时物体的旋转和位置自动改变的问题解决方法.md
+      - UGUI scrollbar置顶显示: Problems/Unity3D/0_UnityUGUI中scroll bar在游戏中启动界面时没有从最上面显示.md
+      - 导入fbx,运行时模型位置旋转错误: Problems/Unity3D/1_Unity导入fbx模型后,运行时物体的旋转和位置自动改变的问题解决方法.md
   - 学习笔记:
     - Notes/index.md
     - C++
-      - C++核心编程: Notes/C++/C++核心编程.md
-      - C++提高编程: Notes/C++/C++提高编程.md
+      - C++核心编程: Notes/C++/0_C++核心编程.md
+      - C++提高编程: Notes/C++/1_C++提高编程.md
   - 关于:
     - ABOUT/index.md # 使用两个index 这样子左上角第一次打开会是所有Tab 而不是ABOUT
 
