@@ -1145,6 +1145,7 @@ Shader
 
 - 纹理映射:将二维的图像蒙在三维物体表面
 - 前提条件:已知组成三维模型的三角形的每个顶点对应在二维贴图上的坐标
+- 再通过**插值**确定三角形内部每个点各自的属性
 
 ![image-20220805173910479](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805173910479.png)
 
@@ -1163,9 +1164,99 @@ Shader
 
 
 
+那如何在三角形内部进行插值?
+
+### 重心坐标Barycentric Coordinates
+
+![image-20220806104841298](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806104841298.png)
+
+- 为什么需要插值?
+  - 需要确定三角形内部每个点的属性
+
+- 哪些属性需要插值?
+  - 纹理,颜色,法线向量
+
+![image-20220806105114824](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806105114824.png)
+
+- 一个三角形对应一套重心坐标
+- **在三角形ABC所对应的平面上的任意一点都可以表示成ABC三个点的线性组合**
+- **必须满足α+β+γ=1**
+- **当αβγ都>0时,点一定在三角形内**
+- 将αβγ作为一个点的坐标来描述点的位置
+- 因此不需要坐标系依然能够得到点的坐标
+- 已知αβγ中两个数就可以得到坐标(因为平面式二维的)
+
+![image-20220806110106122](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806110106122.png)
+
+- 三角形内点的重心坐标可以通过面积比得到
+- 面积可以通过叉乘得到:S=(absinc)/2
+
+![image-20220806110325096](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806110325096.png)
+
+- 通过面积的重心坐标定义可以得到:三角形重心的重心坐标为(1/3,1/3,1/3)
+
+![image-20220806111005408](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806111005408.png)
+
+- 给定坐标也能得到重心坐标
+- 没有必要记忆公式
+
+![image-20220806115622708](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806115622708.png)
+
+- 通过三个点属性的线性组合实现插值
+- 问题:**三维图形投影以后重心坐标会发生变化!**
+- 因此插值需要在三维图形的重心坐标中计算,而不能在投影以后的二维坐标上运算
+- **实际问题:在光栅化中必须先找到屏幕上的像素中心点所对应的三维图形的坐标,在三维图形上进行插值,最后逆变换回屏幕**
+
+
+
+### 应用纹理
+
+![image-20220806163510051](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163510051.png)
+
+- 利用重心坐标算出三维物体上点对应的UV值
+- 将三维物体上的点的UV对应到纹理上的UV
+- 根据纹理设定这个点的k~d~
+
+问题1:纹理放大
+
+![image-20220806163912014](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163912014.png)
+
+- 纹理分辨率太小而模型分辨率高导致纹理被放大
+
+- nearest:对获取到的模型坐标取最近的纹理元素(texel),使得一个像素周围的几个像素都对应相同的纹理元素
+
+  - 效果不好,如左图
+
+    
+
+- bilinear双线性插值
+
+![image-20220806165457351](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806165457351.png)
+
+- 对于三维物体上的点无法一一对应到纹理元素上时
+
+![image-20220806173914840](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806173914840.png)
+
+- **线性插值Lerp**:对两个已知点,当x=0时线性插值结果为第一个点,x=1时线性插值结果为第二个点(见上图公式)
+  - eg.x=0.5时,线性插值为两个点的中点
+
+- 以三维物体上的点四周的四个点为基准,以左下的纹理元素作为原点
+- 先在上下两条边对三维物体上的点**进行水平方向的线性插值**
+- 再**用水平方向线性插值的结果计算该点竖直方向上的线性插值**,得到双线性插值后的结果
+- 最后效果为中间图
+
+
+
+- bicubic:取周围的16个做线性插值
 
 
 
 
 
+问题2:纹理太大
 
+![image-20220806191106794](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806191106794.png)
+
+- 远处发生摩尔纹,近处发生走样
+
+![image-20220806192212514](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806192212514.png)
