@@ -1,7 +1,3 @@
-# 计算机图形学GAMES101
-
-
-
 ## 课程简介:四大板块
 
 - 光栅化:三维空间的几何形体显示在屏幕上
@@ -1222,14 +1218,11 @@ Shader
 ![image-20220806163912014](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163912014.png)
 
 - 纹理分辨率太小而模型分辨率高导致纹理被放大
-
 - nearest:对获取到的模型坐标取最近的纹理元素(texel),使得一个像素周围的几个像素都对应相同的纹理元素
 
   - 效果不好,如左图
 
-    
-
-- bilinear双线性插值
+#### bilinear双线性插值
 
 ![image-20220806165457351](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806165457351.png)
 
@@ -1260,3 +1253,102 @@ Shader
 - 远处发生摩尔纹,近处发生走样
 
 ![image-20220806192212514](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806192212514.png)
+
+- 近处的像素覆盖纹理正常,远处的像素覆盖大量纹理
+- 远处的像素用像素中心采样导致走样:像素中心无法代表像素覆盖区域的值
+
+![image-20220810154106540](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154106540.png)
+
+- 使用超采样可以解决,但**计算量太大**
+
+![image-20220810154330370](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154330370.png)
+
+- **产生问题的根本原因**:采样频率跟不上纹理出现的频率(纹理太大)
+- 思考:使用不采样的方法,直接得到像素区域内的平均值
+
+![image-20220810154540077](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154540077.png)
+
+- 范围查询:数据结构与算法的问题,具体算法有很多
+
+![image-20220810154840721](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154840721.png)
+
+#### **Mipmap**
+
+根据图像,提前生成mipmap,每一层是上一层分辨率的一半
+
+- 可以范围查询
+- 查询速度快,结果不够准确,只能应用于方形范围
+- mipmap的存储空间比原图大小多原图的1/3
+  - 推导:1+1/4+1/16+.....
+
+
+
+如何得到已知像素应该去哪一层mipmap上查询对应纹理?
+
+![image-20220810160111370](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810160111370.png)
+
+![image-20220810160144829](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810160144829.png)
+
+- 将需要操作的像素的中心与其上方和右方的像素中心投影到纹理坐标上
+- 分别大致的计算出在纹理坐标上,需要操作的像素中心到上方像素中心 和 到右方像素中心的距离
+- 取两个距离中的最大值,命名为L
+- 以最大值为边长,近似该像素在纹理上所覆盖的区域
+- 在log~2~L层mipmap上找到该像素对应的平均值
+
+![image-20220810161015935](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161015935.png)
+
+- 按照上例计算,得到的像素的mipmap层数不连续
+- 会导致纹理不连续的缝隙
+- 思考:如何让查找的mipmap层数连续?(eg.找到第1.5层的mipmap)
+
+![image-20220810161232682](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161232682.png)
+
+#### 三线性插值
+
+- 对这个像素所得到层数(非整数)在前后两个整数的mipmap层数上先进行双线性插值
+- 对两个双线性插值的结果再做一次线性插值,得到最后的结果
+- 该算法应用广泛
+
+对比结果:
+
+![image-20220810161902969](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161902969.png)
+
+
+
+使用mipmap的结果:
+
+![image-20220810162016837](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162016837.png)
+
+- 仍然存在问题:远处全部被糊掉(Overblur)
+- 原因:mipmap只能查找正方形区域,以及三线性插值也是一种近似,**各种近似导致结果不准确**
+
+
+
+解决只能方形查询问题
+
+![image-20220810162226453](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162226453.png)
+
+#### 各向异性过滤
+
+![image-20220810162621563](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162621563.png)
+
+- 在mipmap的基础上,增加单独压缩长或宽的mipmap
+- 存储空间是原图的三倍
+- 各向异性:考虑不同的方向性
+- 参数:numX
+  - 加载到第num层
+  - 增加层数会稍微增加存储空间,但不多,与算力无关
+
+![image-20220810162716004](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162716004.png)
+
+- 在实际情况中,**一个像素可能对应的区域是矩形区域,导致用方形去近似结果不准**
+- 各向异性过滤使得矩形的区域结果更加准确
+- 但是! 对于斜着的矩形(如上图),仍然无法更加准确的去近似
+- **因此,各向异性过滤只能解决部分问题**
+
+![image-20220810163037353](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810163037353.png)
+
+- EWA
+- 将不规则的形状分解成多个形状
+- 多次查询mipmap得到结果
+- **效果好,计算量大**
