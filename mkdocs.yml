@@ -69,6 +69,7 @@ nav:
       - UE官方入门笔记: Notes/UE/UE4 笔记.md
   - 关于:
     - ABOUT/index.md # 使用两个index 这样子左上角第一次打开会是所有Tab 而不是ABOUT
+    - 项目展示: ABOUT/project/项目展示.md
 
 # [Extensions]
 plugins:
