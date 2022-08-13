@@ -63,6 +63,8 @@ nav:
         - 王道数据结构: Notes/CS/DS/数据结构.md
       - 算法设计与分析:
         - 北大慕课算法: Notes/CS/Algorithm/算法设计与分析.md
+      - Leetcode:
+        - Leetcode做题笔记: Notes/CS/Leetcode/Leetcode 笔记.md
     - 计算机图形学:
       - GAMES101光栅化: Notes/CG/计算机图形学GAMES101光栅化.md
     - UE:
