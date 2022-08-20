@@ -1184,7 +1184,7 @@ Shader
 - **当αβγ都>0时,点一定在三角形内**
 - 将αβγ作为一个点的坐标来描述点的位置
 - 因此不需要坐标系依然能够得到点的坐标
-- 已知αβγ中两个数就可以得到坐标(因为平面式二维的)
+- 已知αβγ中两个数就可以得到坐标(毕竟平面是二维的)
 
 ![image-20220806110106122](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806110106122.png)
 
@@ -1197,7 +1197,7 @@ Shader
 
 ![image-20220806111005408](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806111005408.png)
 
-- 给定坐标也能得到重心坐标
+- 给定坐标也能通过上述公式得到重心坐标
 - 没有必要记忆公式
 
 ![image-20220806115622708](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806115622708.png)
@@ -1209,7 +1209,7 @@ Shader
 
 
 
-### 应用纹理
+### 纹理的应用
 
 ![image-20220806163510051](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163510051.png)
 
@@ -1217,7 +1217,7 @@ Shader
 - 将三维物体上的点的UV对应到纹理上的UV
 - 根据纹理设定这个点的k~d~
 
-问题1:纹理放大
+#### 问题1:纹理放大
 
 ![image-20220806163912014](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163912014.png)
 
@@ -1250,7 +1250,7 @@ Shader
 
 
 
-问题2:纹理太大
+#### 问题2:纹理太大
 
 ![image-20220806191106794](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806191106794.png)
 
@@ -1356,3 +1356,109 @@ Shader
 - 将不规则的形状分解成多个形状
 - 多次查询mipmap得到结果
 - **效果好,计算量大**
+
+
+
+#### 环境光照
+
+![image-20220820150005094](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150005094.png)
+
+- 对于纹理的理解:相当于一块内存,可以进行范围查找
+- 纹理可以表示大量事物
+
+![image-20220820150132695](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150132695.png)
+
+- 环境光照,环境贴图
+- 我们可以用纹理去表示环境光如何
+- 使用纹理记录环境光的前提假设:环境光来自无穷远处,因此只记录光源的方向信息
+
+![image-20220820150734315](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150734315.png)
+
+- 环境光可以存储在球面上,并且能够展开
+- 相当于一个玻璃球在环境中产生的反射
+
+![image-20220820150852454](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150852454.png)
+
+![image-20220820150927062](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150927062.png)
+
+- 环境光被记录在球上再展开
+- 问题:展开图的上边和下边产生向中间的扭曲
+
+![image-20220820151123051](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151123051.png)
+
+- 将光照信息存在球的包围盒上
+- 沿着原点到球面连线的延长线,将光照信息打到立方体表面
+
+![image-20220820151327182](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151327182.png)
+
+- 得到六张图
+- 效果由于球形
+- 仍有问题:查找没有球形环境光贴图快,但差距不大
+
+
+
+#### 凹凸贴图/法线贴图
+
+![image-20220820151618415](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151618415.png)
+
+- 可以定义表面上的点的相对高度,沿着法线方向相差多少高度
+- 改变表面上的点的法线,从而影响着色的结果
+
+![image-20220820152714425](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820152714425.png)
+
+- 通过法线贴图改变纹理,而不改变物体的几何信息(物体的面数不变)
+- 纹理记录每个像素法线要变化的高度差,从而改变法线
+- p为原来的法线,n为新的法线
+- 问题:如何计算n?
+
+![image-20220820153747213](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820153747213.png)
+
+- 前提:考虑物体在二维平面上,贴图是一维
+- 原本的法线为(0,1)
+- 计算该点在法线改变后的导数,求出切线
+- 导数通过横坐标加一的点与所求点的差除以1(横坐标变化1),乘以影响系数c得到切线的向量表示
+- 法线与切线垂直,将切线逆时针旋转90度得到法线(xy对换,并在x前加上负号)
+- 最后归一化为单位向量
+
+![image-20220820154637707](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820154637707.png)
+
+- 实际情况下物体三维,贴图两维
+- 由于贴图有两个方向,分别计算两个方向上的导数,得到两个方向上的切线
+- 通过切线求出法线,并归一化为单位向量
+- 实际情况下:法线不可能都是(0,0,1)
+- 解决方法:以局部坐标进行运算(这样法线都是0,0,1),计算出新的法线结果后再转换回世界坐标
+
+![image-20220820154658831](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820154658831.png)
+
+- 凹凸贴图的更现代化做法:位移贴图(displacment mapping)
+- 相同:都是用纹理定义表面上的点的相对高度
+- 不同:凹凸贴图通过计算出新的法线来影响结果,位移贴图真实的改变了物体的坐标
+- 位移贴图的优势:避免边缘形状的露馅,以及凸起部分的阴影对自身的影响
+- 位移贴图的缺点:对于模型的三角形面数要求高,必须比纹理定义的频率还要高
+- 解决方法:先用面数少的模型,在应用位移贴图时检测是否需要细分面数,如果需要再进行细分(DX的动态曲面细分)
+
+
+
+#### 三维纹理
+
+![image-20220820155743766](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820155743766.png)
+
+- 纹理也可以是三维的
+- 三维的纹理切开模型后可以看到内部
+- 通过三维空间的噪声函数定义纹理,并不是一张图
+
+![image-20220820160545705](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820160545705.png)
+
+- 使用三维贴图进行体积渲染
+
+
+
+
+
+#### 环境光遮蔽
+
+![image-20220820160259436](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820160259436.png)
+
+- 对于物体自身对于自身的着色影响,在着色过程中无法考虑到
+- 可以通过提前计算记录在纹理中应用
+- 也有实时的算法,叫环境光遮蔽
