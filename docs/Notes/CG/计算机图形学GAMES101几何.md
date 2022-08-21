@@ -82,7 +82,7 @@
 
 
 
-### 特殊的几何:分形
+### 特殊的隐式几何:分形
 
 ![image-20220820201224030](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820201224030.png)
 
@@ -90,7 +90,7 @@
 
 
 
-### 总结
+### 隐式优缺点
 
 ![image-20220820202133676](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820202133676.png)
 
@@ -104,3 +104,120 @@
   - 便于求光线和表面的交
   - 适合描述拓扑结构
   - 几何弧度描述优秀
+
+
+
+
+
+### 显示几何的其他表示方法
+
+
+
+#### 点云
+
+![image-20220821175114061](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821175114061.png)
+
+- 不考虑面,而是密集的点
+- 可以表示任何几何
+- 扫描出的原始数据一般为点云
+- 点云->多边形面
+- 不常用
+
+
+
+#### 多边形面
+
+![image-20220821175313697](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821175313697.png)
+
+- 将几何拆分成小的三角形和四边形
+- 广泛应用
+
+![image-20220821175331749](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821175331749.png)
+
+- .obj文件
+- 包含点的坐标,法线,纹理坐标,以及他们之间的连接关系(哪三个点形成一个三角形)
+- v点   vt纹理坐标   vn法线
+
+
+
+
+
+
+
+## 曲线和曲面
+
+### 贝塞尔曲线
+
+![image-20220821181018304](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821181018304.png)
+
+- 使用一系列控制点定义曲线
+- **起始点必须为p~0~和终点必须为p~3~**
+- **p~0~处切线必须沿p~0~p~1~方向,p~3~处切线必须沿p~2~p~3~方向**
+- 不一定要经过中间的控制点
+- **属于显示几何表示**
+
+
+
+#### de Casteljau算法(如何画出贝塞尔曲线)
+
+![image-20220821181717300](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821181717300.png)
+
+在二次贝塞尔曲线情况下
+
+- 通过画出不同位置的点,从而得到曲线
+- 假设起始点时间为0,终点时间为1,所画的点位于t
+- 找到b~0~b~1~和b~1~b~2~线段上t位置的点
+- 将不同线段上的两个t位置的点连线,找到连线上t位置的点,该点为贝塞尔曲线在时间t时所在的点
+
+![image-20220821181831941](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821181831941.png)
+
+- 找遍所有0到1时间的点就是贝塞尔曲线
+- 类似递归
+
+![image-20220821182024705](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821182024705.png)
+
+- 三次贝塞尔曲线同理
+
+
+
+#### 贝塞尔曲线的代数表示
+
+![image-20220821182254090](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821182254090.png)
+
+- 不停的线性插值得到
+
+![image-20220821182929005](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821182929005.png)
+
+在二次贝塞尔曲线中:
+
+- 结果的点是b~0~,b~1~,b~2~的组合,且与t有关
+
+- 类似于下式的展开
+  $$
+  [(1-t)+t]^2
+  $$
+
+- 同理,三次贝塞尔曲线中为
+  $$
+  [(1-t)+t]^3
+  $$
+  
+
+![image-20220821215204837](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821215204837.png)
+
+- 贝塞尔曲线可以用控制点的线性组合进行表示
+
+- ∑后第一项为控制点
+
+- ∑后第二项为伯恩斯坦多项式,即
+  $$
+  [(1-t)+t]^n
+  $$
+
+![image-20220821220100870](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821220100870.png)
+
+- 控制点也可以是三维的
+
+![image-20220821221104627](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220821221104627.png)
+
+- 由于伯恩斯坦多项式实际上是1的n次方,因此t为0到1的任意值时,多项式之和一定为1

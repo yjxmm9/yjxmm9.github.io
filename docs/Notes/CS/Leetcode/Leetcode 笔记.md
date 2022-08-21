@@ -668,3 +668,193 @@ public:
 - 3.接着判断根节点的两个子树位置是否相同,如有不同直接返回
 - 4.如果根节点的两个子树位置相同,则按照先左后右的顺序将子节点放入队列
 - 重复2~4
+
+
+
+
+
+### 104. 二叉树的最大深度
+
+(https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
+
+```c++
+给定一个二叉树，找出其最大深度。
+
+二叉树的深度为根节点到最远叶子节点的最长路径上的节点数。
+
+说明: 叶子节点是指没有子节点的节点。
+
+示例：
+给定二叉树 [3,9,20,null,null,15,7]，
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+返回它的最大深度 3 。
+
+```
+
+
+
+
+
+#### 笔记
+
+法一:深度优先
+
+- 二叉树的最大深度可以通过max(左子树的最大深度,右子树的最大深度的最大值)+1得到,
+
+- 通过递归,每次递归返回其max(左子树的最大深度,右子树的最大深度的最大值)+1
+
+```c++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(!root)
+        return 0;
+        return max(maxDepth(root->left),maxDepth(root->right))+1;
+    }
+};
+```
+
+
+
+法二:广度优先
+
+- 与普通的广度优先相比,这里需要一个循环取出队列中整行的结点,并将子节点放入队列
+- 每取出一次整行,就记一次深度+1
+- 错误原因:广度优先遍历不需要递归
+
+```c++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int maxDepth(TreeNode* root) {
+        if(!root)
+        return 0;
+        queue<TreeNode*> q;
+        TreeNode* p;
+        q.push(root);
+        int ans=0;
+        while(!q.empty())
+        {
+            int size=q.size();
+            while(size>0)
+            {
+                p=q.front();
+                q.pop();
+                if(p->left)
+                q.push(p->left);
+                if(p->right)
+                q.push(p->right);
+                size--;
+            }
+            ans++;
+        }
+        return ans;
+    }
+};
+```
+
+
+
+
+
+
+
+### 108. 将有序数组转换为二叉搜索树
+
+(https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/)
+
+```c++
+给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+
+高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
+
+ 
+
+示例 1：
+
+
+输入：nums = [-10,-3,0,5,9]
+输出：[0,-3,9,-10,null,5]
+解释：[0,-10,5,null,-3,null,9] 也将被视为正确答案：
+
+示例 2：
+
+
+输入：nums = [1,3]
+输出：[3,1]
+解释：[1,null,3] 和 [3,1] 都是高度平衡二叉搜索树。
+ 
+
+提示：
+
+1 <= nums.length <= 104
+-104 <= nums[i] <= 104
+nums 按 严格递增 顺序排列
+```
+
+
+
+
+
+#### 笔记
+
+由于数组严格递增,因此每次递归都用范围内中间的值创建结点,类似于二分法
+
+```c++
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* helper(vector<int> nums,int left,int right)
+    {
+        if(left>right)
+        return nullptr;
+        int mid=(left+right)/2;
+        TreeNode* root=new TreeNode(nums[mid]);
+        root->left=helper(nums,left,mid-1);
+        root->right=helper(nums,mid+1,right);
+        return root;
+    }
+    
+    TreeNode* sortedArrayToBST(vector<int>& nums) {
+        TreeNode* T=helper(nums,0,nums.size()-1);
+        return T;
+    }
+};
+```
+
