@@ -6,6 +6,8 @@
 
 以下是我毕业展演的作品
 
+<iframe src="//player.bilibili.com/player.html?aid=1054327612&bvid=BV1vH4y1G7KX&cid=1536825583&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 <iframe height=480 width=720 src='https://www.bilibili.com/video/BV1vH4y1G7KX/' frameborder=0 'allowfullscreen'></iframe>
 
 **作品：**《基于AoIP技术的超高清电视转播系统应用》
