@@ -6,7 +6,7 @@
 
 以下是我毕业展演的作品
 
-<iframe height=498 width=510 src='https://www.bilibili.com/video/BV1vH4y1G7KX/' frameborder=0 'allowfullscreen'></iframe>
+<iframe height=1080 width=1920 src='https://www.bilibili.com/video/BV1vH4y1G7KX/' frameborder=0 'allowfullscreen'></iframe>
 
 **作品：**《基于AoIP技术的超高清电视转播系统应用》
 
@@ -24,7 +24,7 @@
 
 
 
-# 我做的其他一些东西
+# 我做的一些东西
 
 
 
@@ -32,7 +32,7 @@
 
 ### 根与蚯蚓（2D双人合作休闲游戏）                       GGJ2023 48小时极限开发                      2023.2
 
-<iframe height=498 width=510 src='https://www.bilibili.com/video/BV1BR4y1z7Li/' frameborder=0 'allowfullscreen'></iframe>
+<iframe height=1080 width=1920 src='https://www.bilibili.com/video/BV1BR4y1z7Li/' frameborder=0 'allowfullscreen'></iframe>
 
 - 作为组长，组织团队开会，与美术沟通对接，确认需求，安排开发进度，测试游戏
 - 策划工作上，负责玩法设计，关卡设计，技能点系统设计，平衡改动
@@ -44,7 +44,7 @@
 
 ### 二十四番花信风（2D横板跑酷音游）                         网易2022Minigame                               2022.10~2022.11
 
-<iframe height=498 width=510 src='https://www.bilibili.com/video/BV1ZP411A7DK/' frameborder=0 'allowfullscreen'></iframe>
+<iframe height=1080 width=1920 src='https://www.bilibili.com/video/BV1ZP411A7DK/' frameborder=0 'allowfullscreen'></iframe>
 
 - 作为组长，与美术沟通对接，确认需求，安排开发进度，测试游戏，编写游戏音乐
 - 策划工作上，独立完成游戏设定，玩法设计，关卡设计，Boss战设计，剧情设计等内容
@@ -56,7 +56,7 @@
 
 ### 舟游京杭（3D跑酷）                                全国数字媒体大赛（一等奖）                                             2022.8~2022.9
 
-<iframe height=498 width=510 src='https://www.bilibili.com/video/BV11e4y1t74g/' frameborder=0 'allowfullscreen'></iframe>
+<iframe height=1920 width=1080 src='https://www.bilibili.com/video/BV11e4y1t74g/' frameborder=0 'allowfullscreen'></iframe>
 
 - 作为组长，组织团队开会，与美术沟通对接，确认需求，安排开发进度，测试游戏
 - 策划工作上，确定游戏设定，玩法设计，关卡设计，答题与收集品系统设计
@@ -94,4 +94,7 @@
 - 负责校级军训汇演的直转播工作，主要负责节目技术需求对接，现场大屏幕的画面切换
 - 代表作：章鱼上大，上大物语
 
-<iframe height=498 width=510 src='https://www.bilibili.com/video/BV1Mg411L7cC/' frameborder=0 'allowfullscreen'></iframe>
+<iframe height=1080 width=1920 src='https://www.bilibili.com/video/BV1Mg411L7cC/' frameborder=0 'allowfullscreen'></iframe>
+
+
+
