@@ -4,7 +4,7 @@
 
 我叫杨柳青，一个爱剪整活视频，试着当过（但失败的）游戏程序&策划，但现在在做转播音频的i人
 
-以下是我毕业展演的作品
+以下是我毕业展演的作品（**点击就可以跳转**到b站看视频，后面的图片也是如此！）
 
 [![videoCover-【上大毕业展演】海南蓝湾LPGA工作日常Vlog.1536825583](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%E3%80%90%E4%B8%8A%E5%A4%A7%E6%AF%95%E4%B8%9A%E5%B1%95%E6%BC%94%E3%80%91%E6%B5%B7%E5%8D%97%E8%93%9D%E6%B9%BELPGA%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%B8%B8Vlog.1536825583.jpeg)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
 
