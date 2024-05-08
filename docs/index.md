@@ -6,9 +6,7 @@
 
 以下是我毕业展演的作品
 
-
-
-[![3](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/3.png)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
+[![videoCover-【上大毕业展演】海南蓝湾LPGA工作日常Vlog.1536825583](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%E3%80%90%E4%B8%8A%E5%A4%A7%E6%AF%95%E4%B8%9A%E5%B1%95%E6%BC%94%E3%80%91%E6%B5%B7%E5%8D%97%E8%93%9D%E6%B9%BELPGA%E5%B7%A5%E4%BD%9C%E6%97%A5%E5%B8%B8Vlog.1536825583.jpeg)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
 
 
 
@@ -36,7 +34,7 @@
 
 ### 根与蚯蚓（2D双人合作休闲游戏）                       GGJ2023 48小时极限开发                      2023.2
 
-<iframe height=480 width=720 src='https://www.bilibili.com/video/BV1BR4y1z7Li/' frameborder=0 'allowfullscreen'></iframe>
+[![videoCover-【九转大根与顶级蚯蚓】GGJ2023_双人合作游戏《根与蚯蚓》.994334432](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%E3%80%90%E4%B9%9D%E8%BD%AC%E5%A4%A7%E6%A0%B9%E4%B8%8E%E9%A1%B6%E7%BA%A7%E8%9A%AF%E8%9A%93%E3%80%91GGJ2023_%E5%8F%8C%E4%BA%BA%E5%90%88%E4%BD%9C%E6%B8%B8%E6%88%8F%E3%80%8A%E6%A0%B9%E4%B8%8E%E8%9A%AF%E8%9A%93%E3%80%8B.994334432.jpeg)](https://www.bilibili.com/video/BV1BR4y1z7Li/)
 
 - 作为组长，组织团队开会，与美术沟通对接，确认需求，安排开发进度，测试游戏
 - 策划工作上，负责玩法设计，关卡设计，技能点系统设计，平衡改动
@@ -48,7 +46,7 @@
 
 ### 二十四番花信风（2D横板跑酷音游）                         网易2022Minigame                               2022.10~2022.11
 
-<iframe height=480 width=720 src='https://www.bilibili.com/video/BV1ZP411A7DK/' frameborder=0 'allowfullscreen'></iframe>
+[![videoCover-【2022网易MG大赛初赛作品《二十四番花信风》】是什么让音游和横板平台跳跃相遇_.873626476](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%E3%80%902022%E7%BD%91%E6%98%93MG%E5%A4%A7%E8%B5%9B%E5%88%9D%E8%B5%9B%E4%BD%9C%E5%93%81%E3%80%8A%E4%BA%8C%E5%8D%81%E5%9B%9B%E7%95%AA%E8%8A%B1%E4%BF%A1%E9%A3%8E%E3%80%8B%E3%80%91%E6%98%AF%E4%BB%80%E4%B9%88%E8%AE%A9%E9%9F%B3%E6%B8%B8%E5%92%8C%E6%A8%AA%E6%9D%BF%E5%B9%B3%E5%8F%B0%E8%B7%B3%E8%B7%83%E7%9B%B8%E9%81%87_.873626476.png)](https://www.bilibili.com/video/BV1ZP411A7DK/)
 
 - 作为组长，与美术沟通对接，确认需求，安排开发进度，测试游戏，编写游戏音乐
 - 策划工作上，独立完成游戏设定，玩法设计，关卡设计，Boss战设计，剧情设计等内容
@@ -60,7 +58,7 @@
 
 ### 舟游京杭（3D跑酷）                                全国数字媒体大赛（一等奖）                                             2022.8~2022.9
 
-<iframe height=480 width=720 src='https://www.bilibili.com/video/BV11e4y1t74g/' frameborder=0 'allowfullscreen'></iframe>
+[![](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%5B%E5%8F%82%E8%B5%9B%E4%BD%9C%E5%93%81%5D3D%E4%BA%AC%E6%9D%AD%E5%A4%A7%E8%BF%90%E6%B2%B3%E4%B8%BB%E9%A2%98%E8%B7%91%E9%85%B7%E9%97%AF%E5%85%B3%E6%B8%B8%E6%88%8F%E3%80%8A%E8%88%9F%E6%B8%B8%E4%BA%AC%E6%9D%AD%E3%80%8B%E8%A7%86%E9%A2%91%E6%BC%94%E7%A4%BA.840011779.jpeg)](https://www.bilibili.com/video/BV11e4y1t74g/)
 
 - 作为组长，组织团队开会，与美术沟通对接，确认需求，安排开发进度，测试游戏
 - 策划工作上，确定游戏设定，玩法设计，关卡设计，答题与收集品系统设计
@@ -98,8 +96,5 @@
 - 负责校级军训汇演的直转播工作，主要负责节目技术需求对接，现场大屏幕的画面切换
 - 代表作：章鱼上大，上大物语
 
-<iframe height=480 width=720 src='https://www.bilibili.com/video/BV1Mg411L7cC/' frameborder=0 'allowfullscreen'></iframe>
+[![videoCover-如何正确地入学氵户大学.397342144](https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/videoCover-%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E5%9C%B0%E5%85%A5%E5%AD%A6%E6%B0%B5%E6%88%B7%E5%A4%A7%E5%AD%A6.397342144.jpeg)](https://www.bilibili.com/video/BV1Mg411L7cC/)
 
-
-
->>>>>>
