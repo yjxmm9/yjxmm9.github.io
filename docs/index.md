@@ -8,7 +8,11 @@
 
 
 
-<iframe src="//player.bilibili.com/player.html?aid=1054327612&bvid=BV1vH4y1G7KX&cid=1536825583&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+
+</div>
+
+[![头像](F:\毕业论文\视频\微信图片_20240505103443.jpg)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
 
 
 
