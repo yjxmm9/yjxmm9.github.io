@@ -1,0 +1,1934 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="杨柳青的个人博客">
+      
+      
+        <meta name="author" content="杨柳青">
+      
+      
+        <link rel="canonical" href="https://yjxmm9.github.io/Notes/UE/UE4%20%E7%AC%94%E8%AE%B0/">
+      
+      
+        <link rel="prev" href="../../CG/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%87%A0%E4%BD%95/">
+      
+      
+        <link rel="next" href="../../Games/GMTK/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>UE官方入门笔记 - 杨柳青的个人博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ue4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="杨柳青的个人博客" class="md-header__button md-logo" aria-label="杨柳青的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            杨柳青的个人博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UE官方入门笔记
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="deep-purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="deep-purple"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yjxmm9/yjxmm9.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yjxmm9.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  学习笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="杨柳青的个人博客" class="md-nav__button md-logo" aria-label="杨柳青的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    杨柳青的个人博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yjxmm9/yjxmm9.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yjxmm9.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    学习笔记
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            学习笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机基础
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/C%2B%2B/0_C%2B%2B%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++核心编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/C%2B%2B/1_C%2B%2B%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++提高编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/DS/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    王道数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_3" id="__nav_1_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    算法设计与分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法设计与分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/Algorithm/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大慕课算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_4" id="__nav_1_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/Leetcode/Leetcode%20%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leetcode做题笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机图形学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机图形学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CG/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%85%89%E6%A0%85%E5%8C%96/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GAMES101光栅化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CG/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%87%A0%E4%BD%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GAMES101几何
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            UE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    UE官方入门笔记
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    UE官方入门笔记
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      蓝图
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="蓝图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      试验运行中的变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加冲刺
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加蹲伏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加生命值和调试伤害
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widgetblueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      控件蓝图（WidgetBlueprint）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postprocessvolume" class="md-nav__link">
+    <span class="md-ellipsis">
+      后期处理体积（PostProcessVolume）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      父蓝图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子类蓝图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个Actor之间的通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actor触发交互事件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      蓝图接口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      加入粒子系统和声音
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      美术资产
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="美术资产">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maya" class="md-nav__link">
+    <span class="md-ellipsis">
+      maya模型导入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      网格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理Texture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础模型（block out）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      碰撞设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化（Optimization）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建材质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      主材质和材质实例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      光照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      光照贴图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    游戏策划
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            游戏策划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Games/GMTK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GMTK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Games/%E9%9C%93%E8%99%B9%E5%BA%8F%E5%88%97%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    游戏拆解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      蓝图
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="蓝图">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      试验运行中的变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加冲刺
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加蹲伏
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      添加生命值和调试伤害
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widgetblueprint" class="md-nav__link">
+    <span class="md-ellipsis">
+      控件蓝图（WidgetBlueprint）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postprocessvolume" class="md-nav__link">
+    <span class="md-ellipsis">
+      后期处理体积（PostProcessVolume）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      父蓝图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      子类蓝图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor" class="md-nav__link">
+    <span class="md-ellipsis">
+      两个Actor之间的通信
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actor_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actor触发交互事件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      蓝图接口
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      加入粒子系统和声音
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      美术资产
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="美术资产">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maya" class="md-nav__link">
+    <span class="md-ellipsis">
+      maya模型导入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      网格
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#texture" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理Texture
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础模型（block out）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      碰撞设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization" class="md-nav__link">
+    <span class="md-ellipsis">
+      优化（Optimization）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建材质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      主材质和材质实例
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      光照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      光照贴图
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="ue4">UE4 笔记<a class="headerlink" href="#ue4" title="Permanent link">&para;</a></h1>
+<h2 id="_1">蓝图<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>更改组件中的变量：拿到组件的引用就能拉线来访问组件上的变量</p>
+<p>Event：用Event模块才能触发逻辑</p>
+<p>变量后面的眼睛点开就能在detail界面修改变量值</p>
+<p>​   （注意：detail面板的修改不会应用到蓝图中，需要在edit blueprint的选项中手动保存到蓝图）</p>
+<p>升级为变量：将一个参数变成一个单独的变量</p>
+<h3 id="_2">试验运行中的变量<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>Event：Mouse Wheel Up/Down</p>
+<p>Press:发生事件      Release：未发生事件</p>
+<p>+/-模块：给变量加、减某个指定值</p>
+<p>print string模块：在editor面板上打印变量</p>
+<h3 id="_3">添加冲刺<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>绑定冲刺的按钮：project settings-&gt;input-&gt;Action Mappings中添加冲刺的按钮</p>
+<p>添加Action Event：搜索冲刺设置的名字</p>
+<h3 id="_4">添加蹲伏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>时间轴模块：触发变量，通过时间轴上打关键帧，自定义变量的值的变化过程，用于连续的变化，常与Lerp一起使用</p>
+<p>​   参数：双击模块：创建新的时间轴关键帧</p>
+<p>​   结点：play：正向播放关键帧</p>
+<p>​               reverse：逆向播放关键帧</p>
+<p>FirstPersonCamera引用-&gt;SetRelativeLocation：设置相机的相对位置（UE4中默认人物的模型【子物体】跟随相机位置移动）</p>
+<p>FirstPersonCamera引用-&gt;SetRelativeLocation-&gt;NewLocation连线添加插值模块</p>
+<p>插值（Lerp）模块：两个变量AB（变量类型取决于你连到的变量是什么类型）分别代表变化起始位置和终点位置，Alpha代表变换趋势，即连上时间轴模块设置的变量</p>
+<p>​   参数：A/B：起始，终点参数，参数类型根据需要return的value决定</p>
+<p>​               Alpha：通常是时间轴的关键帧参数</p>
+<p>​               ShortestPath：建议勾选，保证按照AB间最短路径运动</p>
+<p><img alt="微信截图_20220531165318" src="C:\Users\qingl\Downloads\微信截图_20220531165318.png" /></p>
+<p>改变CapsuleComponent高度：</p>
+<p>CapsuleComponent引用-&gt;SetCapsuleNewHeight-&gt;HalfHeight连接插值模块</p>
+<p>CapsuleNewHeight值也会影响到摄像机（子物体）的高度</p>
+<p>修复蹲伏时冲刺：</p>
+<p>自定义Event：通过自定义事件可以在触发自定义事件的模块（相同名称）被执行的时候调用</p>
+<p>Branch分支：类似if，判断bool值真假，分别执行不同的模块</p>
+<h3 id="_5">添加生命值和调试伤害<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>execute console command：输入命令发送到控制台，如restartlevel</p>
+<p>返回bool值的模块（如判断大小关系等）用branch接受，分别对应true和false两种情况</p>
+<h3 id="widgetblueprint">控件蓝图（WidgetBlueprint）<a class="headerlink" href="#widgetblueprint" title="Permanent link">&para;</a></h3>
+<p>类似于UI设计</p>
+<p>创建控件蓝图：content browser-&gt;右键-&gt;userinterface-&gt;widgetblueprints</p>
+<p>控件蓝图右上角Designer界面：设计UI显示的样式</p>
+<p>控件放在Horizontal Box中（水平）</p>
+<p>progress bar：进度条</p>
+<p>​   detail面板：</p>
+<p>​       slot调整是否充满（Fill）还有进度条格式</p>
+<p>​       apperance-&gt;FillColorandOpacity:修改颜色</p>
+<p>​       progress-&gt;Percent右边bind按钮-&gt;createbinding：创建绑定，逐帧判断玩家的血量（此处不用这个实现）</p>
+<p>控件蓝图右上角Graph界面：编辑蓝图逻辑</p>
+<p>自定义事件模块中可以添加变量作为Inputs</p>
+<p>Progress Bar引用-&gt;Set Percent：控制Progress Bar显示的百分比</p>
+<p>​   参数：inPercent：0到1的数来控制百分比</p>
+<p>Progress Bar引用-&gt;Set Fill Color and Opacity-&gt;In color选项：设置血条的颜色</p>
+<p>​   参数：inColor：接受颜色参数</p>
+<p>select：在index设置的情况下进行2选1</p>
+<p>​   参数：index：接收判断的条件</p>
+<p>​               True：设置Ture情况下返回什么变量</p>
+<p>​               False：设置False情况下返回什么变量（返回什么类型的变量是由ReturnValue后面接受的框的类型决定的）</p>
+<p>血量蓝图思路：</p>
+<p><img alt="image-20220531214849339" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220531214849339.png" /></p>
+<p>控制人物的蓝图中：</p>
+<p>​   beginplay事件中：</p>
+<p>​   create widget：用于中创建一个控件</p>
+<p>​       参数：class：即放入要创建的控件蓝图</p>
+<p>​                   return：返回一个控件对象</p>
+<p>​   add to viewport：将target添加到画面上</p>
+<p><img alt="CreateWidgetNode.png" src="https://docs.unrealengine.com/4.27/Images/InteractiveExperiences/UMG/UserGuide/CreatingWidgets/CreateWidgetNode.jpg" /></p>
+<p>（图中main menu widget就是要显示的控件）</p>
+<p>造成伤害的蓝图中：</p>
+<p>healthbar引用（Widget Bar控件）-&gt;Update Healthbar（自定义事件）：触发自定义事件，并且获得人物脚本中的health变量</p>
+<p><img alt="微信截图_20220531220152" src="C:\Users\qingl\Downloads\微信截图_20220531220152.png" /></p>
+<h3 id="postprocessvolume">后期处理体积（PostProcessVolume）<a class="headerlink" href="#postprocessvolume" title="Permanent link">&para;</a></h3>
+<p>detail面板：</p>
+<p>​   color grading：环境的颜色相关设置</p>
+<p>​       color grading-&gt;WhiteBalance：改变环境的色温</p>
+<p>​   Post Process Volume Settings：</p>
+<p>​       Post Process Volume Settings-&gt;InfiniteExtent：勾选后影响的体积设置成无限范围（否则只能在进入这个体积时才有效果）</p>
+<p>​       Post Process Volume Settings-&gt;Priority：高优先级的先生效</p>
+<p>​       Post Process Volume Settings-&gt;BlendWeight：混合权重，即PostProcess的效果的表现程度</p>
+<p>实现血量越低画面饱和度越低效果：设置PostProcessVolume饱和度为0，然后通过混合权重改变影响的大小</p>
+<p><strong>PostProcess可以设置成一个控件</strong>，用于影响这个物体看到的画面情况</p>
+<p>控件的detail面板：</p>
+<p>​   PostProcessVolume-&gt;color grading-&gt;Global-&gt;Saturation：饱和度</p>
+<p>​   PostProcessVolume-&gt;BlendWeight：混合权重（注意设置初始值）</p>
+<p>在人物蓝图中的人物扣血模块中：</p>
+<p>PostProcess引用-&gt;setblendweight：设置混合权重的大小</p>
+<p>​   参数：BlendWeight：0到1的一个数</p>
+<p>MapRangeClamp模块：将一个范围的值转换为另一个范围等比例的值（如设置了Input范围0到100，Output范围0到1，输入值为50时会输出0.5）</p>
+<p>​   参数：Value：输入的变量</p>
+<p>​               InRangeA/B：输入的范围的左右值</p>
+<p>​               OutRangeA/B：输出的范围的左右值</p>
+<p><img alt="image-20220603215259816" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220603215259816.png" /></p>
+<h3 id="_6">父蓝图<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>蓝图viewport界面：</p>
+<p>​   add component-&gt;static mesh：静态网格体，在details面版下的Static Mesh中选择静态网格体模型</p>
+<p>实现创建门父蓝图：利用时间轴，经过Lerp，来控制Door的旋转参数</p>
+<p>蓝图EventGraph界面：</p>
+<p>​   时间轴：</p>
+<p>​       控件关键帧曲线圆滑：选中所有点，右键选择User</p>
+<p>​       关键帧界面参数Length：整个动画的长度</p>
+<p>​   door（之前创建的静态网格体门）引用-&gt;setRelativeRotation：设置物体旋转参数</p>
+<p><img alt="image-20220604205835286" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220604205835286.png" /></p>
+<h3 id="_7">子类蓝图<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>右键父类蓝图，创建子类蓝图</p>
+<p>蓝图viewport界面：</p>
+<p>​   add component-&gt;box collision：盒形碰撞组件</p>
+<p>​       details面板：</p>
+<p>​           Shape-&gt;BoxExtent：调整碰撞器大小</p>
+<p>​           Collision-&gt;Collision Presets：选择OverlapAllDynamic（和所有动态物体重叠）</p>
+<p>​           Collision-&gt;Generate Overlap Event：勾选后与碰撞器重叠时触发重叠事件</p>
+<p>​           Events：可以创建重叠开始/结束时触发的事件；事件会被添加成为蓝图中的一个触发事件模块</p>
+<p>实现门的子类，当人物进入碰撞器内时门自动打开，离开时自动关闭：添加Box Collision，在Box Collision的details面板的Event中添加OnComponentBegin/EndOverlap事件，在满足重叠物体是角色时，触发Open/CloseDoor事件</p>
+<p>OnComponentBegin/EndOverlap事件：当和碰撞器开始/结束重叠时触发此事件</p>
+<p>​   参数：Other Actor：输出和碰撞器重叠的Actor</p>
+<p>GetPlayerActor：获取玩家引用的模块</p>
+<p><img alt="image-20220604214123167" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220604214123167.png" /></p>
+<h3 id="actor">两个Actor之间的通信<a class="headerlink" href="#actor" title="Permanent link">&para;</a></h3>
+<p>实现用一个踏板触发门：通过OnComponentBeginOverlap触发opendoor（自定义）事件；再通过OnComponentEndOverlap触发closedoor（自定义）事件，注意closedoor触发前需要检查与碰撞器重叠的Actor是否有效，即保证所有重叠的物体都离开了才关门</p>
+<p>在蓝图EventGraph界面：</p>
+<p>​   获取其他蓝图对象的引用：新建变量，将类型改为蓝图的对象引用   </p>
+<p>​   变量的details面板-&gt;InstanceEditable：允许在蓝图界面外的项目窗口的details中修改这个变量</p>
+<p>​   Box引用-&gt;GetOverlappingActors：获取到所有和碰撞器重叠的一类物体，return一个数组，存放所有重叠的这类物体（不会把自己排除，所以返 回的数组的第一个是物体本身）</p>
+<p>​       参数：ClassFilter：选择获取和什么类型的物体重叠</p>
+<p>​   Get（a cpoy）模块：获取到数组</p>
+<p>​       参数：下标</p>
+<p>​   is Valid模块：判断输入进来的物体是否有效，分为true和false两条路</p>
+<p>在项目面板里：</p>
+<p>​   物体需要勾选上GenerateOverlapEvent并且CollisionPreset是PhysicsActor才可以触发重叠事件</p>
+<p><img alt="image-20220605094513461" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605094513461.png" /></p>
+<h3 id="actor_1">Actor触发交互事件<a class="headerlink" href="#actor_1" title="Permanent link">&para;</a></h3>
+<p>实现进入范围后按e开关门：设置新的互动按键，在进入盒体范围内显示TextRender并允许玩家输入按键，触发对应的输入事件，通过FlipFlop模块来轮流触发开关门事件</p>
+<p>在蓝图EventGraph界面：</p>
+<p>​   InputAction xxx事件：右键搜索xxx可以找到该事件，在projectsettings里的inputs设置新的按键xxx后，即可在蓝图中创建InputAction     xxx事件，当按下xxx对应设置的键时触发该事件</p>
+<p>​       参数：Press结点：按下对应按键触发</p>
+<p>​                   Release结点：松开对应按键触发</p>
+<p>​   Enable/DisableInput模块：允许/禁止玩家进行输入操作</p>
+<p>​       参数：player control：通常连上GetPlayerControl模块，用于获取指定玩家的控制输入</p>
+<p>​                   Target：允许/禁止被玩家进行输入操作的对象</p>
+<p>​   FilpFlop模块：被触发后就会做AB对应的两条指令轮流做，如第一次按触发A，第二次按就触发B，一直轮流</p>
+<p>​       参数：A/B：连接对应需要触发的指令</p>
+<p>在蓝图ViewPort界面：</p>
+<p>​   控件TextRender：显示一个文本</p>
+<p>​       details面板-&gt;Rendering-&gt;Hidden in Game：选择游戏开始时文本是显示还是隐藏</p>
+<p>在蓝图EventGraph界面：</p>
+<p>​   TextRender引用-&gt;setHiddenInGame：设置TextRender是否隐藏</p>
+<p>​       参数：NewHidden：设置是否隐藏</p>
+<p><img alt="image-20220605111457050" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605111457050.png" /></p>
+<p><img alt="image-20220605111520792" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605111520792.png" /></p>
+<h3 id="_8">蓝图接口<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>创建蓝图接口：contentBrowser面板右键-&gt;blueprints-&gt;blueprintsInterface</p>
+<p>蓝图接口中可以自己创建函数</p>
+<p>给蓝图类添加接口：蓝图面板中classSettings-&gt;details面板-&gt;Interface-&gt;Add；蓝图界面左侧会出现该接口中的函数，右键-&gt;ImplementFunction来创建接口事件，当该事件触发时会执行后面的语句</p>
+<p>实现对着门按e就能开门（射线检测）：给人物添加之前设置的InputAction Interact事件，并使该事件触发射线检测，如果射线检测到的物体且该物体有interact接口就开门</p>
+<p>在蓝图EventGraph界面：</p>
+<p>​   SphereTraceByChannel：圆柱形的射线检测</p>
+<p>​       参数：Start：起始位置</p>
+<p>​                   End：终点位置</p>
+<p>​                   Radius：圆柱射线的半径</p>
+<p>​                   TraceChannel：Visibilty，对可见并且可以阻挡射线的物体进行返回</p>
+<p>​                   DrawDebugType：设置为ForDuration，就会画出射线的情况</p>
+<p>​   FirstPersonCamera引用-&gt;GetWorldLocation：获取其世界坐标                       </p>
+<p>​   FirstPersonCamera引用-&gt;GetForwardVector：获取其朝向的正面的一个单位向量</p>
+<p>​   BreakHitResult：可以返回检测到的物体的各类信息</p>
+<p>​       参数：Blocking Hit：bool值，是否击中了物体</p>
+<p>​                   HitActor：返回击中得Actor</p>
+<p>​   DoesImplementInterface模块：检查是否有选定的接口，返回bool</p>
+<p>​   触发接口模块（此例中为interact）：Target：有该接口的类型</p>
+<p>物体碰撞问题：</p>
+<p>​   如果物体没有碰撞，先检查物体的蓝图中的CollisionPreset是否正确，如果设置正确但还是没有碰撞，就进入staticmesh检查是否有碰撞，工具栏-&gt;collision-&gt;simpleCollision可以查看碰撞形状，如果没有碰撞，在上方小的选项中的collision中选择合适的add collision进行添加</p>
+<p>ForstPersonPlayer中：</p>
+<p><img alt="image-20220605204749945" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605204749945.png" /></p>
+<p><img alt="image-20220605204707811" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605204707811.png" /></p>
+<p>子类门蓝图中：</p>
+<p><img alt="image-20220605205648680" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220605205648680.png" /></p>
+<h3 id="_9">加入粒子系统和声音<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>声音文件有两种：cue和正常的音频文件</p>
+<p>​   在cue中可以修改声音每一次播放，让他们有一些区别</p>
+<p>声音进入场景后有一定的范围，越靠近声音越响，越远离声音越轻</p>
+<p>在蓝图EventGraph界面：</p>
+<p>​   在蓝图中添加声音：</p>
+<p>​   playSoundAtLocation模块：在指定位置播放声音</p>
+<p>​       参数：Location：位置</p>
+<p>​                   Sound：要播放的声音</p>
+<p>​   在蓝图中添加粒子系统：</p>
+<p>​   spawnEmitterAtLocation：在指定位置生成粒子系统</p>
+<p>​       参数：Location：位置</p>
+<p>​                   EmitterTemplate：粒子</p>
+<p>​   </p>
+<p>解决子弹撞墙反弹后没有触发声音和粒子系统就自动销毁的问题：</p>
+<p>class default-&gt;Actor-&gt;InitialLifeSpan：初始生命周期长度，修改为默认，就不会被销毁了</p>
+<p>使用事件beginplay触发delay三秒，再执行播放声音和触发粒子系统和销毁的命令</p>
+<p>事件beginplay是在这个该蓝图类开始执行时执行</p>
+<h2 id="_10">美术资产<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<h3 id="maya">maya模型导入<a class="headerlink" href="#maya" title="Permanent link">&para;</a></h3>
+<p>导入时的选择栏中几个重要选项：</p>
+<p>​   ConvertScene：把FBX坐标系转换为虚幻坐标系</p>
+<p>​   ConvertSceneUnit：把FBX单位转换为虚幻的单位</p>
+<p>​   CombineMeshes：将场景中的单独的网格体合并成一个</p>
+<h3 id="_11">网格<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p>摁住鼠标中键拖动：可以量取距离</p>
+<p>在视口中选中模型右键-&gt;transform-&gt;Snap/Align：有各种对齐网格的选项可以选择</p>
+<h3 id="texture">纹理Texture<a class="headerlink" href="#texture" title="Permanent link">&para;</a></h3>
+<p>Texture分类：</p>
+<p>​   BaseColor：材质的颜色</p>
+<p>​   Normal：法线贴图，让模型的光照何反射更精准，偏蓝色</p>
+<p>​   Roughness：粗糙度信息，纯灰度</p>
+<p>​   Metalness：金属度信息，只有01信息，0不是金属1是金属</p>
+<p>​   AO：环境光遮蔽贴图，也被称为AO纹理贴图，暴露在环境光下的为白，被遮挡的为黑</p>
+<p>​   ChannelPackedTexture（RMA）：多个纹理分别通过RGB通道组合而成，通常是粗糙度，金属度和AO，每个通道8位</p>
+<p>纹理密度</p>
+<p>导入选项：</p>
+<p>​   SkeletalMesh：骨骼网格体</p>
+<p>​   AutoGenerateCollision：自动生成碰撞</p>
+<p>​   CombineMeshes：其他3d软件的场景中的网格体组合成一个</p>
+<p>​   NormalImportMethod：选择ImportNormals</p>
+<p>​   NormalGeneratonMethod：选择Mikk Tspace，确保表面渲染错误数量减少</p>
+<p>​   MaterialImportMethod：选择是否添加材质，一般不会使用3d软件中的材质</p>
+<p>​   ImportTextures：选择是否导入贴图</p>
+<p>贴图导入选项（details面板）：</p>
+<p>​   CompressionSettings：压缩设置</p>
+<p>​       base color：default  Normal：Normalmap    ChannelPacked：Mask</p>
+<p>​   sRGB：色彩校准，选择是否开启，Basecolor需要开启</p>
+<p>​   FlipGreenChannel：在normal贴图中，DX渲染的不用勾选，OpenGL渲染的要勾选</p>
+<p>​   </p>
+<h3 id="block-out">基础模型（block out）<a class="headerlink" href="#block-out" title="Permanent link">&para;</a></h3>
+<p>模型的简单版本</p>
+<p>对模型在外部3d软件进行修改并重新导出后，点击模型窗口上的reimportBaseMesh，就可以重新导入模型</p>
+<h3 id="_12">碰撞设置<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p>碰撞网格体必须是凸包的</p>
+<p>在外部3d软件创建碰撞网格体：</p>
+<p>​   UBX：盒子碰撞器   UCX：自定义形状碰撞器    USX：球型碰撞器</p>
+<p>​   在maya中用几何体做出碰撞网格体的样子并且以UBX_开头命名，作为物体模型的子物体，导入虚幻时会自动识别成碰撞网格体</p>
+<p>SimpleCollision：简单碰撞，用于阻挡玩家 ComplexCollision：复杂碰撞，用于互动时对于特定面有特殊要求</p>
+<p>在ue中创建碰撞网格体：</p>
+<p>​   模型界面菜单中Collision选项：提供多种自动生成碰撞的选项</p>
+<p>​       DOP：根据XYZ坐标生成更加精确的碰撞器</p>
+<p>​       AuotoConvesCollision：自动生成碰撞器，可以调节精度，凸包的数量等（精度越高消耗越大）</p>
+<p>​       details面板-&gt;useComplexCollisionAsSimple：用复杂碰撞的网格体作为简单碰撞器（消耗大）</p>
+<h3 id="optimization">优化（Optimization）<a class="headerlink" href="#optimization" title="Permanent link">&para;</a></h3>
+<p>环境美术优化：多边形数量polycount，绘制调用，LOD，材质</p>
+<p>​   绘制调用：一个网格体+一个材质需要消耗一个绘制调用，每加一个材质就需要多消耗一个绘制调用</p>
+<p>​   LOD：Level of Detail，在近处为高质量模型，在远处自动换成低质量模型，从而节省性能</p>
+<p>​       LODSettings-&gt;LOD Group：选择LOD的各种预设</p>
+<p>​       LOD X-&gt;ReductionSettings-&gt;PercentTriangles：控制三角形数量</p>
+<p>​       LODSettings-&gt;LOD Import：自定义导入不同LOD模型</p>
+<p>​       LODSettings-&gt;AutoComputeLODDistance：选择是否自动计算不同LOD的切换位置</p>
+<p>​       LOD X-&gt;ScreenSize：与上一个LOD切换的屏幕大小</p>
+<p>​       MaterialSlots-&gt;MaterialSlots：添加材质</p>
+<h3 id="_13">创建材质<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<p>contentBrowser面板右键-&gt;创建材质</p>
+<p>将贴图移到材质面板，会生成TextureSample结点</p>
+<p>​   参数：RGB：RGB同时输出</p>
+<p>​               R/G/B：三个分别单独输出</p>
+<p>将贴图结点通过连线输出到<strong>材质结点</strong>上</p>
+<p>​   参数：对应的不同贴图类型</p>
+<p>details面板：</p>
+<p>​   选中贴图结点，检查MaterialExpressionTextureBase-&gt;SampleType设置是否和贴图类型一致</p>
+<p>在工作界面的视口界面，左上角显示模式中选择OptimizationViewMode-&gt;ShaderComplexity可以查看场景中模型显示性能的消耗</p>
+<h3 id="_14">主材质和材质实例<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<p>类似父子关系，父类拓展参数，子类可以根据自己的需要对参数修改</p>
+<p>利用主材质创建多个材质实例应用在不同的模型上：</p>
+<p>​   主材质中：</p>
+<p>​       将贴图结点转换为参数，这样材质实例中就能将贴图作为参数进行更换</p>
+<p>​   材质实例中：</p>
+<p>​   将模型赋上对应的材质实例，在材质实例中勾选使贴图参数可以被更改</p>
+<p>​   注意贴图的类型要和贴图的CompressionSettings一致防止报错</p>
+<p>使材质实例可以控制UV平铺的纹理量：</p>
+<p>​   在主材质中：</p>
+<p>​       TexCoordinate结点：控制者两个方向上的纹理平铺参数</p>
+<p>​       让TexCoordinate结点乘以一个constant变量，从而通过控制constant参数的大小来修改平铺</p>
+<p>​       贴图参数结点的参数UV控制平铺</p>
+<p><img alt="image-20220607115352514" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220607115352514.png" /></p>
+<p>使材质实例可以控制颜色：</p>
+<p>​   主材质中：</p>
+<p>​       添加constant3参数，分别代表RGB三个通道的值，可以调整颜色</p>
+<p>​       将constant3参数乘以BaseColor贴图的RGB，输出到材质结点的BaseColor</p>
+<p><img alt="image-20220607125046693" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220607125046693.png" /></p>
+<p>为了节省性能，使主材质中一些参数调节在选中情况下才开启：</p>
+<p>​   利用StaticSwitchParam结点：可以在details界面选择该参数结点为true还是false，分别执行两条不一样的命令</p>
+<p><img alt="image-20220607125118866" src="C:\Users\qingl\AppData\Roaming\Typora\typora-user-images\image-20220607125118866.png" /></p>
+<p>修改材质的着色模型和混合模式：</p>
+<p>​   在材质实例面板的details面板中General-&gt;MaterialPropertyOverrides-&gt;BlendMode和ShadingModel</p>
+<h3 id="_15">光照<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p>光照类型：</p>
+<p>​   在灯光的右侧details面板修改mobility选项</p>
+<p>​   Static：消耗少，直接渲染在光照贴图上并且之后不再实时渲染；可移动的物体不会被照亮</p>
+<p>​    Stationary：消耗介于中间，不能动，但能够修改亮度和颜色，渲染到光照贴图上</p>
+<p>​    Moveable：消耗大，实时进行渲染</p>
+<p>光源类型：</p>
+<p>​   Directional：定向光源，无穷远处，模拟日光</p>
+<p>​   Sky：天空光，使场景远处的天空照亮</p>
+<p>​   Spot：聚光，锥形点向外发光</p>
+<p>​   Point：点光源，向所有方向发射光</p>
+<p>​   Rectangle：长方形光，从一个长方形面板发出光，模拟窗的光照等</p>
+<p>天空光需要天空贴图来显示效果：</p>
+<p>​   天空光-&gt;details面板-&gt;Light-&gt;SourceType：选择天空光依据的天空类型（场景中的天空/根据指定贴图）</p>
+<p>​   天空光-&gt;details面板-&gt;Light-&gt;Cubemap：选择渲染天空光的天空贴图</p>
+<h3 id="_16">光照贴图<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<p>用于减少实时运算的光照</p>
+<p>build按键用于烘焙光照</p>
+<p>build-&gt;LightingQuality：烘焙质量</p>
+<p>WorldSettings-&gt;Lightmass：烘焙质量具体选项</p>
+<p>在虚幻中创建光照贴图：</p>
+<p>​   BuildSettings-&gt;GenerateLightmapUVs：勾选</p>
+<p>​   GeneralSettings-&gt;LightMapResolution：光照贴图分辨率，越高质量越好，性能消耗越大</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 杨柳青
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/25244085" target="_blank" rel="noopener" title="Bilibili | 杨菊小米米" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603 5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1zm-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8 6.3-6.5 9.7-14.3 10.1-23.5V173.8zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5-9.6 0-17.5-3.2-23.6-9.5-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2 6.3-6.3 13.2-9.6 23.3-10 9.2.4 17 3.7 23.3 10zm191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.1 6.3-14 9.5-23.6 9.5-9.6 0-17.4-3.2-23.6-9.5-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2 6.3-6.3 14.1-9.6 23.3-10 9.2.4 17 3.7 23.3 10z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yjxmm9" target="_blank" rel="noopener" title="GitHub | yjxmm9" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

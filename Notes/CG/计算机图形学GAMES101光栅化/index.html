@@ -1,0 +1,3922 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="杨柳青的个人博客">
+      
+      
+        <meta name="author" content="杨柳青">
+      
+      
+        <link rel="canonical" href="https://yjxmm9.github.io/Notes/CG/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%85%89%E6%A0%85%E5%8C%96/">
+      
+      
+        <link rel="prev" href="../../CS/Leetcode/Leetcode%20%E7%AC%94%E8%AE%B0/">
+      
+      
+        <link rel="next" href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%87%A0%E4%BD%95/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.21">
+    
+    
+      
+        <title>GAMES101光栅化 - 杨柳青的个人博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.66ac8b77.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/no-footer.css">
+    
+      <link rel="stylesheet" href="../../../mkdocs/css/unordered-list-symbols.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="杨柳青的个人博客" class="md-header__button md-logo" aria-label="杨柳青的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            杨柳青的个人博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GAMES101光栅化
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="lime" data-md-color-accent="deep-purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="lime" data-md-color-accent="deep-purple"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/yjxmm9/yjxmm9.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yjxmm9.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  学习笔记
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="杨柳青的个人博客" class="md-nav__button md-logo" aria-label="杨柳青的个人博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    杨柳青的个人博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/yjxmm9/yjxmm9.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    yjxmm9.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    学习笔记
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            学习笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机基础
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            计算机基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    C++
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            C++
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/C%2B%2B/0_C%2B%2B%E6%A0%B8%E5%BF%83%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++核心编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/C%2B%2B/1_C%2B%2B%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    C++提高编程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/DS/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    王道数据结构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_3" id="__nav_1_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    算法设计与分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            算法设计与分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/Algorithm/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    北大慕课算法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_4" id="__nav_1_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Leetcode
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Leetcode
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CS/Leetcode/Leetcode%20%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leetcode做题笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计算机图形学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            计算机图形学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GAMES101光栅化
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    GAMES101光栅化
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介:四大板块
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量与线性代数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量与线性代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量相加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量点乘和叉乘
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量点乘和叉乘">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      点乘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      叉乘
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      二维变换(使用==矩阵==表示)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二维变换(使用==矩阵==表示)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩放
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      切变
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性变换的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      平移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      齐次坐标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      仿射变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合变换
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三维变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩放,平移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      视图变换和投影变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视图变换和投影变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      视图变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      投影变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="投影变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      正交投影
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      透视投影
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角形的光栅化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三角形的光栅化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      视口变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角形作为多边形的表示形状
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样:光栅化最简单的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      反走样(抗锯齿)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="反走样(抗锯齿)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样的artifact(瑕疵,问题)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      反走样的方法:采样前做模糊(滤波)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么这么解决?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么这么解决?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波:把特定的频率抹掉
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波=平均=卷积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样=重复频域上的内容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msaamulti-sample-antialiasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSAA(multi sample antialiasing):使用更多采样点反走样
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他反走样方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      消隐问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="消隐问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      画家算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-Buffer算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shading" class="md-nav__link">
+    <span class="md-ellipsis">
+      着色Shading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="着色Shading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blinn-Phong反射模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blinn-Phong反射模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      漫反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      高光项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blinn-phong_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      整个Blinn-Phong反射模型公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      着色频率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      图形(实时渲染)管线Graphics Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理映射Texture Mapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="纹理映射Texture Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barycentric-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      重心坐标Barycentric Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="纹理的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题1:纹理放大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      bilinear双线性插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题2:纹理太大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mipmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mipmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      三线性插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      各向异性过滤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      凹凸贴图/法线贴图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维纹理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光遮蔽
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6GAMES101%E5%87%A0%E4%BD%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GAMES101几何
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    UE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            UE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../UE/UE4%20%E7%AC%94%E8%AE%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UE官方入门笔记
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    游戏策划
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            游戏策划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Games/GMTK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GMTK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Games/%E9%9C%93%E8%99%B9%E5%BA%8F%E5%88%97%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%85%B3%E5%8D%A1%E8%AE%BE%E8%AE%A1%E7%9A%84%E6%8B%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    游戏拆解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      课程简介:四大板块
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量与线性代数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量与线性代数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量相加
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      向量点乘和叉乘
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="向量点乘和叉乘">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      点乘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      叉乘
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      矩阵
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      二维变换(使用==矩阵==表示)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二维变换(使用==矩阵==表示)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩放
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      切变
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性变换的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      平移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      齐次坐标
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      仿射变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      逆变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合变换
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三维变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      缩放,平移
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      视图变换和投影变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视图变换和投影变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      视图变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      投影变换
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="投影变换">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      正交投影
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      透视投影
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角形的光栅化
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三角形的光栅化">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      视口变换
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角形作为多边形的表示形状
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样:光栅化最简单的方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      反走样(抗锯齿)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="反走样(抗锯齿)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样的artifact(瑕疵,问题)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      反走样的方法:采样前做模糊(滤波)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么这么解决?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="为什么这么解决?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波:把特定的频率抹掉
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      滤波=平均=卷积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      采样=重复频域上的内容
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#msaamulti-sample-antialiasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      MSAA(multi sample antialiasing):使用更多采样点反走样
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      其他反走样方法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    <span class="md-ellipsis">
+      消隐问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="消隐问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    <span class="md-ellipsis">
+      画家算法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#z-buffer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Z-Buffer算法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shading" class="md-nav__link">
+    <span class="md-ellipsis">
+      着色Shading
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="着色Shading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blinn-phong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blinn-Phong反射模型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blinn-Phong反射模型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    <span class="md-ellipsis">
+      漫反射
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    <span class="md-ellipsis">
+      高光项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光项
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blinn-phong_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      整个Blinn-Phong反射模型公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    <span class="md-ellipsis">
+      着色频率
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      图形(实时渲染)管线Graphics Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#texture-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理映射Texture Mapping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="纹理映射Texture Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#barycentric-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      重心坐标Barycentric Coordinates
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    <span class="md-ellipsis">
+      纹理的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="纹理的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题1:纹理放大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bilinear" class="md-nav__link">
+    <span class="md-ellipsis">
+      bilinear双线性插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题2:纹理太大
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mipmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mipmap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    <span class="md-ellipsis">
+      三线性插值
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    <span class="md-ellipsis">
+      各向异性过滤
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光照
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    <span class="md-ellipsis">
+      凹凸贴图/法线贴图
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    <span class="md-ellipsis">
+      三维纹理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境光遮蔽
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>GAMES101光栅化</h1>
+
+<p>GAMES101第一部分:光栅化</p>
+<h2 id="_1">课程简介:四大板块<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>光栅化:三维空间的几何形体显示在屏幕上</p>
+</li>
+<li>
+<p>曲线和曲面</p>
+</li>
+<li>
+<p>光线追踪</p>
+</li>
+<li>
+<p>动画/模拟/仿真</p>
+</li>
+</ul>
+<p>不学的内容:图形API(OpenGL/DX/Vulcan),理解课程内容后对图形API更好上手</p>
+<h2 id="_2">向量与线性代数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>图形学涉及的学科:</p>
+<ul>
+<li>
+<p>线性代数,微积分,统计</p>
+</li>
+<li>
+<p>光学,力学</p>
+</li>
+<li>
+<p>信号处理,数值分析</p>
+</li>
+</ul>
+<h3 id="_3">向量概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220712203958787" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712203958787.png" /></p>
+<p><img alt="image-20220712204144569" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712204144569.png" /></p>
+<ul>
+<li>
+<p>==注意==:<strong>模用两条杠表示,向量上箭头变成三角的为单位向量</strong></p>
+</li>
+<li>
+<p>单位向量只表示方向,不关心长度</p>
+</li>
+</ul>
+<h3 id="_4">向量相加<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220712204302867" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712204302867.png" /></p>
+<ul>
+<li>笛卡尔坐标系表示向量:可以直接用x和y表示一个向量,<strong>图形学上通常写为列向量</strong></li>
+</ul>
+<p><img alt="image-20220712204551852" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712204551852.png" /></p>
+<ul>
+<li>使用笛卡尔坐标系的原因之一:便于计算长度</li>
+</ul>
+<h3 id="_5">向量点乘和叉乘<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h4 id="_6">点乘<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220712204908671" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712204908671.png" /></p>
+<ul>
+<li>
+<p>点乘的结果是一个数字</p>
+</li>
+<li>
+<p><strong>点乘图形学的应用:可以快速得到两个向量的夹角,尤其是两个向量都是单位向量时</strong></p>
+</li>
+<li>
+<p>点乘的运算性质:</p>
+</li>
+</ul>
+<p><img alt="image-20220712205313834" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712205313834.png" /></p>
+<ul>
+<li>笛卡尔坐标系中的点乘:</li>
+</ul>
+<p><img alt="image-20220712205452960" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712205452960.png" /></p>
+<ul>
+<li>点乘和投影:</li>
+</ul>
+<p><img alt="image-20220712205639338" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712205639338.png" /></p>
+<p><img alt="image-20220712205900761" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712205900761.png" /></p>
+<p><img alt="image-20220712210056691" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712210056691.png" /></p>
+<ul>
+<li>投影和点乘的应用:</li>
+<li>分解向量;</li>
+<li>判断两个方向是否接近(点乘的结果是否接近1);</li>
+<li>判断方向相同还是相反(点乘的正,负,零)</li>
+</ul>
+<h4 id="_7">叉乘<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220712210807140" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712210807140.png" /></p>
+<ul>
+<li>
+<p>结果是一个和原来的两个向量都<strong>垂直的向量</strong>,换言之结果不在这两个所在面</p>
+</li>
+<li>
+<p>叉乘的方向 ----- ==<strong>右手螺旋定则</strong>==:对于a×b,四指的转向为a转向b,大拇指的方向为叉乘结果的方向</p>
+</li>
+<li>
+<p>向量叉积不满足交换律:a×b=-b×a</p>
+</li>
+</ul>
+<p><img alt="image-20220712211720591" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712211720591.png" /></p>
+<ul>
+<li>
+<p>若一个坐标系x×y=z,则称为<strong>右手坐标系</strong></p>
+</li>
+<li>
+<p>==<strong>这门课都是右手坐标系</strong>==</p>
+</li>
+<li>
+<p>向量叉乘的笛卡尔坐标计算:</p>
+</li>
+</ul>
+<p><img alt="image-20220712212147785" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712212147785.png" /></p>
+<ul>
+<li>
+<p>向量叉乘也可以写成矩阵形式</p>
+</li>
+<li>
+<p><strong>图形学中叉乘的应用:判断左右,内外</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220712212432337" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712212432337.png" /></p>
+<ul>
+<li>
+<p>左侧图:一个xy平面,通过a×b与z正方向相同得到,b在a的左侧</p>
+</li>
+<li>
+<p>右侧图:分别用AB×AP,BC×AP,CA×AP,得到AP永远在三个边的左侧,所以P在三角形内部(若ABC顺时针同理)</p>
+</li>
+</ul>
+<p><img alt="image-20220712214505736" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712214505736.png" /></p>
+<ul>
+<li>直角坐标系便于分解向量</li>
+</ul>
+<h3 id="_8">矩阵<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220712214631494" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712214631494.png" /></p>
+<ul>
+<li>矩阵的乘积:</li>
+</ul>
+<p><img alt="image-20220712214822573" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712214822573.png" /></p>
+<ul>
+<li>矩阵乘积的性质:<strong>没有交换律</strong>,有结合律和分配律</li>
+</ul>
+<p><img alt="image-20220712214959378" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712214959378.png" /></p>
+<ul>
+<li>矩阵向量相乘</li>
+</ul>
+<p><img alt="image-20220712215126641" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712215126641.png" /></p>
+<ul>
+<li>矩阵转置:</li>
+</ul>
+<p><img alt="image-20220712215211996" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712215211996.png" /></p>
+<ul>
+<li>单位矩阵:</li>
+</ul>
+<p><img alt="image-20220712215304245" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712215304245.png" /></p>
+<ul>
+<li>
+<p>单位矩阵用于定义矩阵的逆</p>
+</li>
+<li>
+<p>点乘和叉乘的矩阵形式:</p>
+</li>
+</ul>
+<p><img alt="image-20220712215502789" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220712215502789.png" /></p>
+<ul>
+<li>==注意==:此处A^*^是一种特殊的矩阵</li>
+</ul>
+<h2 id="_9">二维变换(使用==矩阵==表示)<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h3 id="_10">缩放<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li>均匀的:</li>
+</ul>
+<p><img alt="image-20220713205057205" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713205057205.png" /></p>
+<ul>
+<li>不均匀的:</li>
+</ul>
+<p><img alt="image-20220713205114338" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713205114338.png" /></p>
+<h3 id="_11">反射<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220713205216490" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713205216490.png" /></p>
+<h3 id="_12">切变<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220713205245027" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713205245027.png" /></p>
+<ul>
+<li>分析过程:切变变换中,y不变,x变为x+ay    [通过原来(0,1)变成(a,1)以及原来(0,1/2)变成(a/,1/2)]</li>
+</ul>
+<h3 id="_13">旋转<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li>默认绕原点(0,0)旋转,旋转方向为逆时针方向</li>
+</ul>
+<p><img alt="image-20220713210320672" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713210320672.png" /></p>
+<ul>
+<li>推导过程:如上图的(1,0)点和(0,1)点的变换前后矩阵相乘分析</li>
+</ul>
+<p><img alt="image-20220713210517604" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713210517604.png" /></p>
+<ul>
+<li>
+<p>此处以(1,0)为例</p>
+</li>
+<li>
+<p><strong>旋转-θ角度:相当于旋转θ角度的矩阵的转置</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220715092812290" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715092812290.png" /></p>
+<ul>
+<li>
+<p>又由于旋转θ和-θ正好是逆操作,因此<strong>旋转-θ的矩阵也等于旋转θ的矩阵的逆</strong>(见逆变换)</p>
+</li>
+<li>
+<p>所以:==旋转矩阵的转置等于旋转矩阵的逆==,数学上称这类矩阵为==正交矩阵==</p>
+</li>
+</ul>
+<h3 id="_14">线性变换的概念<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>以上所有变换(<strong>==能够表示为下式矩阵相乘形式的变换==</strong>)都被称为线性变换</p>
+</li>
+<li>
+<p>矩阵必须和向量在同一维度(即2×2的矩阵不能操作三维向量)</p>
+</li>
+</ul>
+<p><img alt="image-20220713210714358" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713210714358.png" /></p>
+<h3 id="_15">平移<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220713214233872" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713214233872.png" /></p>
+<p><img alt="image-20220713214257399" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713214257399.png" /></p>
+<ul>
+<li>
+<p><strong>结论:平移不能用矩阵的形式(线性变换)来表示,必须在后面加上一个向量</strong></p>
+</li>
+<li>
+<p>==注意==:<strong>由该式可得:齐次坐标的变换是先进行线性变换再进行平移</strong></p>
+</li>
+</ul>
+<h3 id="_16">齐次坐标<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>引入齐次坐标的原因</strong>:==平移不能用矩阵的形式(线性变换)表示,因此为了将平移和其他线性变换统一,使用齐次坐标==</p>
+</li>
+<li>
+<p>齐次坐标:在原来维数的基础上多加一维</p>
+</li>
+</ul>
+<p><img alt="image-20220713214521335" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713214521335.png" /></p>
+<ul>
+<li>
+<p>我们发现:多加一维时,<strong>平移也可以使用矩阵进行运算了,所有的变换都统一了!</strong></p>
+</li>
+<li>
+<p>多加的一维上数字的意义:1代表点  0代表向量</p>
+</li>
+<li>
+<p>如此设计的意义:</p>
+</li>
+<li>
+<p>1.向量具有平移不变性,所以最后一维为0保护其不会被平移</p>
+</li>
+<li>
+<p>2.</p>
+</li>
+</ul>
+<p><img alt="image-20220713214842703" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713214842703.png" /></p>
+<ul>
+<li>
+<p>如此设计也满足了:</p>
+</li>
+<li>
+<p>向量加向量最后一位仍为0,仍旧为向量</p>
+</li>
+<li>
+<p>点-点最后一位为0,变成向量</p>
+</li>
+<li>
+<p>点+向量最后一位为1,是一个点</p>
+</li>
+<li>
+<p>==注意==:当最后一位为大于1的数时,该齐次坐标表示的值为x/w和y/w;因此<strong>点+点的结果是两个点的中点</strong></p>
+</li>
+</ul>
+<h3 id="_17">仿射变换<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220713215902563" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713215902563.png" /></p>
+<ul>
+<li>
+<p>类似上图第一个式子的变换,称为仿射变换</p>
+</li>
+<li>
+<p>仿射变换通过齐次坐标就可以用一个矩阵表示</p>
+</li>
+<li>
+<p>==注意==:<strong>齐次坐标表示的变换是先线性变换再进行平移(第二个式子和第一个式子等价)</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220713220016777" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713220016777.png" /></p>
+<ul>
+<li>==注意==:对于二维的齐次坐标的变换矩阵的最后一行永远是0,0,1;<strong>而对于其他维数则不一定</strong></li>
+</ul>
+<h3 id="_18">逆变换<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220713220214693" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713220214693.png" /></p>
+<ul>
+<li><strong>逆变换在数学上正好对应乘以逆矩阵</strong></li>
+</ul>
+<h3 id="_19">组合变换<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>复杂的变换可以通过一系列简单变换得到</p>
+</li>
+<li>
+<p><strong>变换顺序十分重要</strong>(从矩阵角度理解,矩阵相乘不满足交换律,所以乘以的先后发生变化结果也会发生变化)</p>
+</li>
+<li>
+<p>先旋转后平移:</p>
+</li>
+</ul>
+<p><img alt="image-20220713221021527" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713221021527.png" /></p>
+<ul>
+<li>先平移后旋转:</li>
+</ul>
+<p><img alt="image-20220713221035229" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713221035229.png" /></p>
+<ul>
+<li>组合变换矩阵相乘的顺序:矩阵乘在向量的左侧,先发生的靠近向量,后发生的远离向量(理解为后发生的变换要在之前的变换完成后在发生)</li>
+</ul>
+<p><img alt="image-20220713222040957" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713222040957.png" /></p>
+<p><img alt="image-20220713222207238" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713222207238.png" /></p>
+<ul>
+<li>
+<p>==注意==:矩阵虽然不满足交换率,<strong>但满足结合律!</strong>可以先将向量左侧的所有变换矩阵综合起来,同时也说明无论多复杂的变换都能用3×3的矩阵表示</p>
+</li>
+<li>
+<p>分解变换:</p>
+</li>
+</ul>
+<p><img alt="image-20220713222430504" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713222430504.png" /></p>
+<p>如何让如图左侧的图形<strong>绕其左下角</strong>旋转45°?</p>
+<ul>
+<li>先移到原点再旋转(只能绕原点旋转),再移回去</li>
+</ul>
+<h2 id="_20">三维变换<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h2>
+<ul>
+<li>与二维类似</li>
+</ul>
+<p><img alt="image-20220713223557881" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713223557881.png" /></p>
+<p><img alt="image-20220713223611865" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220713223611865.png" /></p>
+<ul>
+<li><strong>同样的,三维的齐次坐标代表的是先进行线性变换再平移</strong></li>
+</ul>
+<h3 id="_21">缩放,平移<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220715102451917" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715102451917.png" /></p>
+<h3 id="_22">旋转<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h3>
+<ul>
+<li>分别绕三个轴进行:</li>
+</ul>
+<p><img alt="image-20220715102606328" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715102606328.png" /></p>
+<ul>
+<li>由于y轴是z×x得到,所以形式上与x和z的结果略有区别</li>
+</ul>
+<p><img alt="image-20220715102827116" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715102827116.png" /></p>
+<ul>
+<li>
+<p><strong>复杂的旋转也是通过在三个轴上的旋转合成得到的</strong></p>
+</li>
+<li>
+<p>这三个角在数学上被称为:<strong>欧拉角</strong></p>
+</li>
+</ul>
+<p><strong>罗德里格斯公式</strong>:</p>
+<ul>
+<li>任意的旋转都可以用该公式写成矩阵形式,其本质就是在三个轴上的旋转组合而成</li>
+</ul>
+<p><img alt="image-20220715103001005" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715103001005.png" /></p>
+<ul>
+<li>
+<p><strong>n为所绕的旋转轴的向量(默认从原点出发),α为旋转角度</strong></p>
+</li>
+<li>
+<p>==注意==:如果想要绕着不是从原点出发的轴进行旋转,可以通过先平移到这个轴的位置,再旋转,再平移回去的操作实现</p>
+</li>
+</ul>
+<h2 id="_23">视图变换和投影变换<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h2>
+<p>三维物体变换的过程:</p>
+<ul>
+<li>
+<p>模型变换(模型放在一起)-&gt;视图变换(找拍摄角度)-&gt;投影变换(拍摄照片)</p>
+</li>
+<li>
+<p>简称mvp变换(model view    projection)</p>
+</li>
+</ul>
+<h3 id="_24">视图变换<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220715104044436" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715104044436.png" /></p>
+<ul>
+<li>关键参数:位置   拍摄方向    向上方向(为了确定相机的旋转,是横过来的还是竖过来的)</li>
+</ul>
+<p><img alt="image-20220715104440556" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715104440556.png" /></p>
+<ul>
+<li>
+<p>相机的相对运动:如果所有的物体和相机保持相对位置不变,整体移动,所得到的画面也不变</p>
+</li>
+<li>
+<p>==我们规定==:<strong>相机位置放在(0,0,0),并朝-z方向看</strong>,并将所有物体与相机保持相对位置不变移动</p>
+</li>
+</ul>
+<p>如何将相机移动到规定位置?</p>
+<p><img alt="image-20220715104855493" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715104855493.png" /></p>
+<ul>
+<li>
+<p>先将相机平移到原点,再将拍摄方向旋转到-z,再将向上方向旋转到y,最后将g×t对齐x</p>
+</li>
+<li>
+<p>矩阵表示:M(视图变换)=R(旋转矩阵)T(平移矩阵)</p>
+</li>
+</ul>
+<p><img alt="image-20220715105552481" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715105552481.png" /></p>
+<ul>
+<li>
+<p>==注意==:由于齐次坐标是先线性变换再平移,因此这里要先平移的话就要先乘平移的矩阵,再在左边乘以线性变换的矩阵</p>
+</li>
+<li>
+<p>旋转矩阵:由于直接写变换到xyz轴上比较困难,因此<strong>考虑逆变换:先写出xyz轴如何变换到当前相机旋转,再求该矩阵的逆</strong>;又因为我们已知旋转矩阵为正交矩阵,因此<strong>旋转矩阵的逆等于矩阵的转置</strong>,从而得到逆矩阵(见二维旋转)</p>
+</li>
+</ul>
+<p><img alt="" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715110226404.png" /></p>
+<ul>
+<li>
+<p>由于相对运动,我们<strong>同时移动相机和模型</strong>,因此又被称为<strong>模型视图变换</strong></p>
+</li>
+<li>
+<p>模型视图变换是为了之后的投影变换做准备</p>
+</li>
+</ul>
+<h3 id="_25">投影变换<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h3>
+<p>正交投影和透视投影的区别:</p>
+<p><img alt="image-20220715110806629" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715110806629.png" /></p>
+<ul>
+<li>正交投影:没有近大远小   透视投影:有近大远小</li>
+</ul>
+<p><img alt="image-20220715111333867" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715111333867.png" /></p>
+<h4 id="_26">正交投影<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>简单理解:</p>
+<p><img alt="image-20220715111638407" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715111638407.png" /></p>
+<ul>
+<li>
+<p>相机看向-z方向</p>
+</li>
+<li>
+<p>==我们规定==:最后的结果放在一个(-1,1)的矩形中,便于之后操作</p>
+</li>
+</ul>
+<p>正规做法:</p>
+<p><img alt="image-20220715112205015" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715112205015.png" /></p>
+<p><img alt="image-20220715112534812" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715112534812.png" /></p>
+<ul>
+<li>
+<p>先确定物体在xyz三个轴的左右,上下,前后范围</p>
+</li>
+<li>
+<p>再平移到原点</p>
+</li>
+<li>
+<p>最后缩放为标准的立方体(-1到1)</p>
+</li>
+<li>
+<p>==注意==:这里远f&lt;近n,因为我们向-z观察,因此OpenGL等使用左手坐标系(避免该问题)</p>
+</li>
+</ul>
+<p>变换矩阵:</p>
+<p><img alt="image-20220715114401146" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715114401146.png" /></p>
+<ul>
+<li>缩放到长度为2:因为-1到1</li>
+</ul>
+<h4 id="_27">透视投影<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220715115242188" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715115242188.png" /></p>
+<p><strong>==注意==:齐次坐标中的点 乘以 任何数都仍然表示同一个点</strong></p>
+<p><img alt="image-20220715115849862" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715115849862.png" /></p>
+<ul>
+<li>
+<p><strong>透视投影的过程</strong>:先将远平面挤压成近平面的大小,再进行正交投影</p>
+</li>
+<li>
+<p>规定:</p>
+</li>
+<li>
+<p>近平面大小不变 </p>
+</li>
+<li>
+<p>远平面的z轴位置(即f)不变  </p>
+</li>
+<li>
+<p>远平面的中心点位置不变</p>
+</li>
+</ul>
+<p><strong>寻找挤压得对应关系:</strong></p>
+<p><img alt="image-20220715120756411" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715120756411.png" /></p>
+<ul>
+<li>
+<p>由<strong>相似三角形</strong>得:y'=ny/z   (x道理相同)</p>
+</li>
+<li>
+<p>透视转正交得矩阵推导:</p>
+</li>
+</ul>
+<p><img alt="image-20220715121253582" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715121253582.png" /></p>
+<ul>
+<li>
+<p><strong>==注意==:这里的z≠f,z只是任意一个点,因此z还不知道</strong></p>
+</li>
+<li>
+<p>利用齐次坐标的点 乘以 相同的数仍然是那个点的性质可以得到右边的式子</p>
+</li>
+<li>
+<p>也就是左边的式子经过透视到正交的矩阵计算后得到右边的式子</p>
+</li>
+</ul>
+<p><img alt="image-20220715121523868" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715121523868.png" /></p>
+<ul>
+<li>已知结果的三个量,可以推导出矩阵的大部分信息,接下来推导第三行的信息</li>
+</ul>
+<p><img alt="image-20220715122258737" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715122258737.png" /></p>
+<ul>
+<li>
+<p>利用之前的条件:</p>
+</li>
+<li>
+<p>近平面的任何点不会变  </p>
+</li>
+<li>
+<p>远平面的任何点的z不会变</p>
+</li>
+<li>
+<p>代入近平面上的点:</p>
+</li>
+</ul>
+<p><img alt="image-20220715122351795" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715122351795.png" /></p>
+<ul>
+<li>将(x,y,n,1)(即近平面上任意一点)代入推导的矩阵式子,可以得到:<strong>第三行的前两个数一定为0</strong></li>
+<li>用AB替换后两个未知数;</li>
+<li>又利用齐次坐标的点乘以相同的数仍然是那个点的性质得到第三行的计算结果为n^2^,即:<strong>==An+B=n^2^==</strong></li>
+</ul>
+<p><img alt="image-20220715122801291" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715122801291.png" /></p>
+<ul>
+<li>同理,利用远平面中点的位置不变,以及齐次坐标的点 乘以 相同的数仍然是那个点的性质(保证最后一个数是z的坐标值),带入中点的位置得到:==<strong>Af+B=f^2^</strong>==</li>
+</ul>
+<p><img alt="image-20220715123013531" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220715123013531.png" /></p>
+<ul>
+<li>
+<p>两式联立,即可计算出AB大小,因此矩阵求得!</p>
+</li>
+<li>
+<p><strong>透视变换的整体矩阵为:正交变换矩阵乘以透视转正交矩阵</strong></p>
+</li>
+</ul>
+<p><strong>思考:挤压以后,中间平面上的某一点的z是被推向n还是推向f?</strong></p>
+<h2 id="_28">三角形的光栅化<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20220719152128843" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719152128843.png" /></p>
+<ul>
+<li>长宽比:近平面的宽度:高度 </li>
+<li>
+<p>垂直FOV:相机位置到平面上边和下边中点的两条连线(两条红线)所形成的角度</p>
+</li>
+<li>
+<p>水平FOV可以通过长宽比和垂直FOV计算出来</p>
+</li>
+<li>
+<p>==注意==:<strong>这里的lrtb是指近平面上可视范围的上下左右范围</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220719153536413" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719153536413.png" /></p>
+<ul>
+<li><strong>定义一个视锥只需要定义一个宽高比,定义一个垂直FOV即可,其他的(远近,上下,左右)通过推导得到就行</strong></li>
+</ul>
+<p><img alt="image-20220719154303708" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719154303708.png" /></p>
+<ul>
+<li>在视图和投影变换以后,所有的物体都在(-1,1)的立方体内</li>
+</ul>
+<p><img alt="image-20220719155058395" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719155058395.png" /></p>
+<ul>
+<li>
+<p>屏幕:一个二维数组,每个元素是一个像素</p>
+</li>
+<li>
+<p>光栅=屏幕 光栅化=将画面显示到屏幕上</p>
+</li>
+<li>
+<p>像素Pixel是picture element的缩写,<strong>默认像素是屏幕上的最小单位</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220719160020262" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719160020262.png" /></p>
+<ul>
+<li>
+<p>规定:</p>
+</li>
+<li>
+<p>像素的坐标用(x,y)表示,范围从从(0,0)到(width-1,height-1)</p>
+</li>
+<li>
+<p>中心点在(x+0.5,y+0.5)的位置</p>
+</li>
+</ul>
+<p><img alt="image-20220719160306040" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719160306040.png" /></p>
+<p><img alt="image-20220719160616516" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719160616516.png" /></p>
+<h3 id="_29">视口变换<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>将(-1,1)范围的画面先缩放到width和height的长宽,在将该画面的中心点移动到左下角(和屏幕规定的保持一致)</p>
+</li>
+<li>
+<p>==注意==:区别MVP变换和视口变换</p>
+</li>
+<li>
+<p>显示的图像其实就是显存的一块区域,把这块区域映射到屏幕上</p>
+</li>
+</ul>
+<p><img alt="image-20220719162121539" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719162121539.png" /></p>
+<p><strong>LCD:液晶显示器</strong></p>
+<ul>
+<li>
+<p>显示原理:利用光的波动性,通过第一个光栅把光变成竖的,再通过液晶的扭曲,使得光通过横的光栅</p>
+</li>
+<li>
+<p>光经过光栅以后只能按照光栅的方向振动(竖着或横着)</p>
+</li>
+</ul>
+<p><img alt="image-20220719162718644" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719162718644.png" /></p>
+<p>LED:利用发光二极管</p>
+<h3 id="_30">三角形作为多边形的表示形状<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220719163318886" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719163318886.png" /></p>
+<ul>
+<li>
+<p>选择三角形的原因:</p>
+</li>
+<li>
+<p>三角新是最基础的多边形,不能被拆分成其他多边形</p>
+</li>
+<li>
+<p>三角形一定是在一个平面上的</p>
+</li>
+<li>
+<p>三角形便于判断点的内外关系</p>
+</li>
+<li>
+<p>三角形方便内部做插值,做出渐变</p>
+</li>
+</ul>
+<p><img alt="image-20220719180631099" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719180631099.png" /></p>
+<ul>
+<li>判断像素中点和三角形之间的关系</li>
+</ul>
+<h3 id="_31">采样:光栅化最简单的方法<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220719180918407" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719180918407.png" /></p>
+<ul>
+<li>==<strong>采样就是把函数离散化的过程</strong>==</li>
+</ul>
+<p><img alt="image-20220719194859271" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719194859271.png" /></p>
+<ul>
+<li>判断点是否在三角形内,在三角形内则设数组元素为1,否则为0</li>
+</ul>
+<p><img alt="image-20220719195434772" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719195434772.png" /></p>
+<ul>
+<li>
+<p>如何判断点与三角形的关系:向量的叉积</p>
+</li>
+<li>
+<p><strong>按照顺时针或逆时针顺序,将三角形三边的向量分别×起点到需要判断的点构成的向量,如果三条边叉乘的结果都朝z轴正方向或负方向,则在三角形内</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220719195750762" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719195750762.png" /></p>
+<ul>
+<li>边界上的点自己定义,课程中不做处理</li>
+</ul>
+<p><img alt="image-20220719200119797" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719200119797.png" /></p>
+<ul>
+<li>
+<p>优化光栅化:</p>
+</li>
+<li>
+<p>轴向包围盒:取x~min~到x~max~和y~min~到y~max~之间的矩形区域</p>
+</li>
+<li>
+<p>光栅化遍历整个屏幕太过浪费,只需要遍历包围盒即可</p>
+</li>
+</ul>
+<p>实际屏幕光栅化</p>
+<p><img alt="image-20220719200558265" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719200558265.png" /></p>
+<p><strong>锯齿问题:信号走样</strong></p>
+<p><img alt="image-20220719201111950" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220719201111950.png" /></p>
+<h2 id="_32">反走样(抗锯齿)<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h2>
+<h3 id="artifact">采样的artifact(瑕疵,问题)<a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220802220102409" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802220102409.png" /></p>
+<ul>
+<li>锯齿:学名走样</li>
+</ul>
+<p><img alt="image-20220802220446576" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802220446576.png" /></p>
+<ul>
+<li>摩尔纹</li>
+</ul>
+<p><img alt="image-20220802220630035" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802220630035.png" /></p>
+<p><img alt="image-20220802220721942" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802220721942.png" /></p>
+<p><strong>问题的本质:信号的变化速度太快以至于采样速度太慢,跟不上</strong></p>
+<h3 id="_33">反走样的方法:采样前做模糊(滤波)<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220802221222358" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802221222358.png" /></p>
+<ul>
+<li>采样前做模糊(滤波)</li>
+</ul>
+<p><img alt="image-20220802221449706" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802221449706.png" /></p>
+<ul>
+<li>==注意==:不能先采样再用走样的结果进行模糊</li>
+</ul>
+<h3 id="_34">为什么这么解决?<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220802221635835" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802221635835.png" /></p>
+<ul>
+<li>利用余弦研究问题:频率不同</li>
+</ul>
+<p><img alt="image-20220802222021325" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802222021325.png" /></p>
+<ul>
+<li>
+<p>傅里叶级数展开:任何一个函数都可以用一系列的sin和cos项以及常数项的线性组合来表示</p>
+</li>
+<li>
+<p><strong>==重点==:任何函数都可以被分解为频率从小到大的一系列函数的线性组合</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220802222441083" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802222441083.png" /></p>
+<ul>
+<li>任何函数经过傅里叶变换都可以转换成新的函数,并且通过逆傅里叶变换可以重新转换回去</li>
+</ul>
+<p><img alt="image-20220802223328349" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802223328349.png" /></p>
+<ul>
+<li>
+<p>上图是对一个函数的不同频率进行相同间隔的采样,当函数频率越高时,采样结果越失真</p>
+</li>
+<li>
+<p>结论:当采样频率较低时,可以用频率低的函数进行采样;同理,当采样频率较高时,可以用频率高的函数进行采样</p>
+</li>
+</ul>
+<p><img alt="image-20220802223714785" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802223714785.png" /></p>
+<ul>
+<li>==<strong>两个频率截然不同的函数用相同的采样频率进行采样,得到完全一样的结果,这种现象称为走样</strong>==</li>
+</ul>
+<p><img alt="image-20220802223924062" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802223924062.png" /></p>
+<h4 id="_35">滤波:把特定的频率抹掉<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220802224147063" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802224147063.png" /></p>
+<ul>
+<li>
+<p>照片通过傅里叶变换从<strong>时域</strong>变到<strong>频域</strong></p>
+</li>
+<li>
+<p>频域图的观察方法:中心区域代表低频信息,四周区域代表高频信息,哪里亮度越高,这部分频率的信息越多</p>
+</li>
+<li>
+<p>横竖的线:由于默认照片左右上下重复导致,在这里我们忽略</p>
+</li>
+</ul>
+<p><img alt="image-20220802224502531" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802224502531.png" /></p>
+<ul>
+<li>
+<p>抹去低频信号,留下高频信号,然后逆傅里叶变换回去,得到图片边界(高通滤波器)</p>
+</li>
+<li>
+<p>边界:左右信号频率发生剧烈变化,因此高频对应边界</p>
+</li>
+</ul>
+<p><img alt="image-20220802224853587" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802224853587.png" /></p>
+<ul>
+<li>只留下低频信息,抹去高频,再逆傅里叶变换,得到模糊图(低通滤波器)</li>
+</ul>
+<p><img alt="image-20220802225011236" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220802225011236.png" /></p>
+<ul>
+<li>高频和低频都去掉,留下中间部分,图像上表现的是留下不明显的边界特征</li>
+</ul>
+<p><img alt="image-20220803164818735" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803164818735.png" /></p>
+<h4 id="_36">滤波=平均=卷积<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220803164856066" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803164856066.png" /></p>
+<p><img alt="image-20220803164927940" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803164927940.png" /></p>
+<p><img alt="image-20220803165036565" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803165036565.png" /></p>
+<ul>
+<li>
+<p>如上图是卷积的计算</p>
+</li>
+<li>
+<p><strong>实际上卷积的结果就是==信号在对应位置和周边信号的平均结果==</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220803165155575" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803165155575.png" /></p>
+<ul>
+<li>==<strong>卷积的定理:时域卷积=频域相乘,时域乘积=频域卷积</strong>==</li>
+</ul>
+<p><img alt="image-20220803165509722" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803165509722.png" /></p>
+<ul>
+<li>
+<p>图像与上图的3*3卷积盒卷积后可以得到模糊的图像</p>
+</li>
+<li>
+<p>图像通过傅里叶变换变成频域信息后与3*3卷积盒傅里叶变换的频域信息(其实转换后发现就是一个低通滤波器)相乘的结果,将该结果逆傅里叶变换可以得到相同的图像</p>
+</li>
+<li>
+<p>结论:证明了时域卷积=频域相乘</p>
+</li>
+</ul>
+<p><img alt="image-20220803174930108" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803174930108.png" /></p>
+<ul>
+<li>低通滤波器</li>
+</ul>
+<p><img alt="image-20220803175315861" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803175315861.png" /></p>
+<p><img alt="image-20220803175605358" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803175605358.png" /></p>
+<ul>
+<li>
+<p>对比结论:采用更大的卷积盒,得到的频域图越小(卷积盒越大,平均的像素越广,原图像越模糊,因此该图像的频域图也更集中在低频)</p>
+</li>
+<li>
+<p>通过对比帮助理解不同卷积盒的特点</p>
+</li>
+</ul>
+<p><img alt="image-20220803180200985" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803180200985.png" /></p>
+<h4 id="_37">采样=重复频域上的内容<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220803180239961" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803180239961.png" /></p>
+<ul>
+<li>
+<p><strong>时域相乘=频域卷积</strong></p>
+</li>
+<li>
+<p><strong>时域上:被采样的函数与冲激函数相乘得到采样的结果(一群离散的点)</strong></p>
+</li>
+<li>
+<p><strong>频域上:被采样的函数与冲激函数卷积得到被采样函数频域图像的重复</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220803180823977" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803180823977.png" /></p>
+<p>为什么会产生走样?</p>
+<ul>
+<li>==<strong>因为采样的频率越低,频域上重复图像的间隔越小,间隔太小导致产生混叠失真</strong>==</li>
+</ul>
+<p><img alt="image-20220803181332183" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803181332183.png" /></p>
+<p>解决方案:</p>
+<ul>
+<li>
+<p>增加采样率</p>
+</li>
+<li>
+<p>先模糊(拿掉高频信息)再采样</p>
+</li>
+</ul>
+<p><img alt="image-20220803181441016" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803181441016.png" /></p>
+<ul>
+<li><strong>当去掉信号的高频部分后,再用原来的采样率进行采样,就不会发生混叠,从而解决走样问题</strong></li>
+</ul>
+<p><img alt="" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803181606938.png" /></p>
+<p>如何对三角形进行模糊操作?</p>
+<p><img alt="image-20220803181947421" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803181947421.png" /></p>
+<p><img alt="image-20220803182034764" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803182034764.png" /></p>
+<p><img alt="image-20220803182134861" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803182134861.png" /></p>
+<ul>
+<li>
+<p>使用大小为一个像素的卷积盒,求像素内的平均值,最后再采样</p>
+</li>
+<li>
+<p>问题:计算量比较大,难以算出每个像素具体的值</p>
+</li>
+</ul>
+<h3 id="msaamulti-sample-antialiasing">MSAA(multi sample antialiasing):使用更多采样点反走样<a class="headerlink" href="#msaamulti-sample-antialiasing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>问题:只是对反走样的近似,并不能解决走样问题</li>
+</ul>
+<p><img alt="image-20220803212517254" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803212517254.png" /></p>
+<p><img alt="image-20220803212734850" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803212734850.png" /></p>
+<p><img alt="image-20220803212813312" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803212813312.png" /></p>
+<p><img alt="image-20220803213055529" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803213055529.png" /></p>
+<ul>
+<li>
+<p>将每个像素划分为更小的N*N的点,并判断在三角形内的点占整个像素内的点的比例,从而近似一个像素的值</p>
+</li>
+<li>
+<p><strong>==MSAA并没有提高采样率!==</strong>而是通过更多的点去近似得到模糊操作后的值</p>
+</li>
+<li>
+<p>MSAA的问题:计算量大</p>
+</li>
+<li>
+<p><strong>实际情况中MSAA应用</strong>:不是标准的N*N的划分,而是有特殊的图案来划分,并且点之间存在复用来减小计算量</p>
+</li>
+</ul>
+<h3 id="_38">其他反走样方法<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220803220906383" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220803220906383.png" /></p>
+<ul>
+<li>
+<p>FXAA:先获得有锯齿的图,通过图像匹配找到边界,最后将边界换成没有锯齿的状态(快)</p>
+</li>
+<li>
+<p>TAA:复用上一帧的数据,将MSAA的样本分布在时间上(高效!)</p>
+</li>
+</ul>
+<p>超分辨率/超采样:</p>
+<ul>
+<li>
+<p>将小分辨率拉成大分辨率:会产生锯齿(采样样本不足产生的问题)</p>
+</li>
+<li>
+<p>DLSS:深度学习,猜测缺失的细节</p>
+</li>
+</ul>
+<h2 id="_39">消隐问题<a class="headerlink" href="#_39" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20220804185435748" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804185435748.png" /></p>
+<h3 id="_40">画家算法<a class="headerlink" href="#_40" title="Permanent link">&para;</a></h3>
+<ul>
+<li>由远及近将物体光栅化</li>
+<li>
+<p>Eg:画立方体,先画最后面的一个面,再依次画左上右下四个侧面,最后画正面</p>
+</li>
+<li>
+<p>问题:四个侧面如果按照右上左下的顺序画,就会出现问题,因此画家算法存在问题</p>
+</li>
+</ul>
+<p><img alt="image-20220804190213225" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804190213225.png" /></p>
+<ul>
+<li>
+<p>物体深度排序的时间复杂度:O(nlogn)</p>
+</li>
+<li>
+<p>问题:如上图的复杂情况,画家算法无法奏效</p>
+</li>
+</ul>
+<p><img alt="image-20220804190518358" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804190518358.png" /></p>
+<h3 id="z-buffer">Z-Buffer算法<a class="headerlink" href="#z-buffer" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>以每个像素为单位,使用两个缓存图像,一个记录每个像素当前最近的物体的距离信息(Z-Buffer),另一个记录最近物体的颜色(frame buffer)</p>
+</li>
+<li>
+<p>==<strong>注意</strong>==:在这里研究的z表示物体到相机的距离,因此始终为正(原来的概念中是相机在原点往-z看)</p>
+</li>
+</ul>
+<p><img alt="image-20220804202306400" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804202306400.png" /></p>
+<ul>
+<li>右边的是z-buffer,深度约大,颜色越浅</li>
+</ul>
+<p><img alt="image-20220804202729328" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804202729328.png" /></p>
+<p><img alt="image-20220804202846926" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804202846926.png" /></p>
+<ul>
+<li>
+<p>一开始z-buffer中都存储无限大的数</p>
+</li>
+<li>
+<p>接着判断新的三角形(物体由许多三角形构成)中每一个像素与z-buffer中对应像素的深度值大小,并保留深度更小的值</p>
+</li>
+</ul>
+<p><img alt="image-20220804203812347" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804203812347.png" /></p>
+<ul>
+<li>
+<p>时间复杂度:O(n)</p>
+</li>
+<li>
+<p>该算法不受物体顺序影响</p>
+</li>
+<li>
+<p>如果两个三角形在同一个像素有相同深度如何处理?</p>
+</li>
+<li>
+<p>一般情况下由于计算都用浮点数进行,基本不会出现同一像素两个三角形深度完全相同,若完全相同之后课程解释</p>
+</li>
+<li>
+<p>根据MSAA,考虑到可能根据采样点的深度进行z-buffer</p>
+</li>
+<li>
+<p>==<strong>z-buffer是目前最流行的消隐算法</strong>==</p>
+</li>
+</ul>
+<h2 id="shading">着色Shading<a class="headerlink" href="#shading" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20220804205053906" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804205053906.png" /></p>
+<ul>
+<li><strong>shading的计算机图形学定义:对不同物体应用不同材质</strong></li>
+</ul>
+<p><img alt="image-20220804205255629" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804205255629.png" /></p>
+<h3 id="blinn-phong">Blinn-Phong反射模型<a class="headerlink" href="#blinn-phong" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220804205454727" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804205454727.png" /></p>
+<ul>
+<li>
+<p>高光</p>
+</li>
+<li>
+<p>漫反射</p>
+</li>
+<li>
+<p>间接光照</p>
+</li>
+</ul>
+<p>总结:着色有三种不同的部分</p>
+<p><img alt="image-20220804205746762" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804205746762.png" /></p>
+<ul>
+<li>
+<p>==注意:==默认在平面的一个很小的范围,物体表面是直的</p>
+</li>
+<li>
+<p>n:法线方向 surface normal</p>
+</li>
+<li>
+<p>v:观测方向 view direction</p>
+</li>
+<li>
+<p>l:光照方向 light direction</p>
+</li>
+</ul>
+<p><strong>以上三种向量都是单位向量</strong></p>
+<p><img alt="image-20220804210150717" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804210150717.png" /></p>
+<ul>
+<li>==<strong>注意</strong>==:暂时不考虑其他物体在这个点的阴影造成的影响</li>
+</ul>
+<h4 id="_41">漫反射<a class="headerlink" href="#_41" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220804210338347" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804210338347.png" /></p>
+<ul>
+<li>漫反射在每个观测角度上光线能量都是一样的</li>
+</ul>
+<p><img alt="image-20220804213232200" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804213232200.png" /></p>
+<ul>
+<li>
+<p>着色点要考虑单位面积接收到多少能量</p>
+</li>
+<li>
+<p><strong>兰伯特余弦定律:接受到光线得能量与光照方向和法线方向之间夹角得余弦成正比</strong></p>
+</li>
+</ul>
+<p><img alt="image-20220804214242053" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804214242053.png" /></p>
+<p><strong>结论:点光源为中心的球壳上光的能量与到点光源的距离的平方成反比</strong></p>
+<p><img alt="image-20220804214518197" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804214518197.png" /></p>
+<p><strong>漫反射=点光源到shading point的光照强度*光线和法线夹角的余弦值</strong></p>
+<p>解释:max(0,n·l)</p>
+<ul>
+<li>n·l是余弦值(单位向量点乘),取max是因为当余弦值为负时代表光线从平面下方照射过来,物理上没有意义,因此取0</li>
+</ul>
+<p>解释:k~d~</p>
+<ul>
+<li>
+<p>k~d~是反射颜色的系数</p>
+</li>
+<li>
+<p><strong>物理学上</strong>:物体吸收光线一部分波长的能量,并反射无法吸收的,反射出的能量波长对应我们看到的颜色</p>
+</li>
+<li>
+<p>Eg.k~d~为1时说明shading point不吸收光线能量,光线全部反射;k~d~为0时说明所有光线能量都被吸收,我们看到的是黑色的</p>
+</li>
+<li>
+<p>==<strong>实际上</strong>==:k~d~是rgb三个通道的值表示的向量,每个通道都是0~1,因此表示颜色</p>
+</li>
+</ul>
+<p>解释:为什么公式与v(观察角度)没有关系</p>
+<ul>
+<li>漫反射在每个方向上的光线能量相同,因此与v无光</li>
+</ul>
+<p><img alt="image-20220804220052873" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220804220052873.png" /></p>
+<h4 id="_42">高光项<a class="headerlink" href="#_42" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220805144729615" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805144729615.png" /></p>
+<ul>
+<li>当观察角度在镜面反射角度附近时(v约等于R),则能够看到高光,反之则看不到</li>
+</ul>
+<p><img alt="image-20220805145020688" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805145020688.png" /></p>
+<ul>
+<li>半程向量h:光照方向和观测方向的角<strong>平分线上</strong>的<strong>单位向量</strong></li>
+<li>将观测方向和镜面反射方向是否相近的问题转化为:<strong>半程向量和法线向量是否相近</strong></li>
+<li>用点乘判断是否相近,点乘值越靠近1则越相近,越靠近0则越远</li>
+</ul>
+<p>公式解释:</p>
+<ul>
+<li>k~s~仍然表示颜色</li>
+<li>实际上高光项也要考虑单位面积光线能量接受率<code>max(0,n·l)</code>,只不过这个Blinn-Phong模型中将其省略了</li>
+<li>不用R·v而选择用h·n是因为R·v计算量更大;使用R·v的为Phong模型;使用h·n是Blinn-Phong模型</li>
+<li>指数p:用于控制高光有多大</li>
+</ul>
+<p><img alt="image-20220805150313535" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805150313535.png" /></p>
+<ul>
+<li>可以看到随着指数变大,cos函数变化的越剧烈</li>
+<li><strong>实际情况中p取100~200,符合我们看到的实际情况</strong></li>
+</ul>
+<p><img alt="image-20220805150511028" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805150511028.png" /></p>
+<h4 id="_43">环境光项<a class="headerlink" href="#_43" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220805150537565" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805150537565.png" /></p>
+<ul>
+<li>环境光非常复杂,Blinn-Phong模型中简化为恒定的环境光</li>
+<li>环境光与l,v,n都没有关系,<strong>是一个常数</strong></li>
+<li>具体计算需要全局光照的知识</li>
+</ul>
+<h4 id="blinn-phong_1">整个Blinn-Phong反射模型公式<a class="headerlink" href="#blinn-phong_1" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220805150817856" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805150817856.png" /></p>
+<h3 id="_44">着色频率<a class="headerlink" href="#_44" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220805151157387" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805151157387.png" /></p>
+<ul>
+<li>左边:着色应用在每一个<strong>平面</strong>上    中间:着色应用在每一个<strong>顶点</strong>上(三角形中间部分做插值)  右边:着色应用在每一个<strong>像素</strong>上</li>
+</ul>
+<p><img alt="image-20220805151445921" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805151445921.png" /></p>
+<ul>
+<li>flat shading:着色应用在每个三角形平面上,三角形内部不做插值</li>
+</ul>
+<p><img alt="image-20220805151611176" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805151611176.png" /></p>
+<ul>
+<li>Gouraud shading:每个顶点应用着色,三角形内部做插值</li>
+</ul>
+<p><img alt="image-20220805151753488" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805151753488.png" /></p>
+<ul>
+<li>
+<p>Phong shading:先求出三角形顶点法线方向,再插值出三角形内部的法线方向,最后将着色应用在每个像素上</p>
+</li>
+<li>
+<p>概念区分:phong模型是着色模型,phong shading是着色频率,是两个不同的概念</p>
+</li>
+</ul>
+<p><img alt="image-20220805152352151" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805152352151.png" /></p>
+<ul>
+<li>当面数足够多时,phong shading不一定比flat shading效果更好,反而可能更差,计算量也不一定更小,反而可能更大</li>
+</ul>
+<p>如何求顶点的法线?</p>
+<p><img alt="image-20220805152722269" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805152722269.png" /></p>
+<ul>
+<li>对顶点所关联的平面的法线求(面积的加权)平均</li>
+</ul>
+<p>如何插值得到三角形中每个像素的法线?</p>
+<p><img alt="image-20220805152940957" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805152940957.png" /></p>
+<ul>
+<li>利用重心坐标</li>
+</ul>
+<h2 id="graphics-pipeline">图形(实时渲染)管线Graphics Pipeline<a class="headerlink" href="#graphics-pipeline" title="Permanent link">&para;</a></h2>
+<p><img alt="image-20220805161249314" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805161249314.png" /></p>
+<p><img alt="image-20220805161859025" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805161859025.png" /></p>
+<p><img alt="image-20220805161916390" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805161916390.png" /></p>
+<p><img alt="image-20220805161933849" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805161933849.png" /></p>
+<p><img alt="image-20220805162044624" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805162044624.png" /></p>
+<ul>
+<li>如果是Gouraud shading则发生在顶点处理阶段,如果phong shading则发生在采样点(像素)处理阶段</li>
+<li>GPU的渲染管线中有可编程的代码,用来决定顶点/像素如何着色,这些代码被称为<strong>shader</strong></li>
+</ul>
+<p><img alt="image-20220805164152357" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805164152357.png" /></p>
+<p>渲染管线三大步骤:</p>
+<ul>
+<li>顶点处理:MVP变换</li>
+<li>光栅化:采样,消隐</li>
+<li>着色</li>
+</ul>
+<p><img alt="image-20220805164235159" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805164235159.png" /></p>
+<p>Shader</p>
+<ul>
+<li>用于指定每一个像素如何着色,通用于每一个像素</li>
+<li>两类:vertex shader(顶点)     pixel/fragment shader(像素)</li>
+<li>网站:shadertoy.com</li>
+</ul>
+<p><img alt="image-20220805165220609" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805165220609.png" /></p>
+<ul>
+<li>游戏引擎</li>
+</ul>
+<p><img alt="image-20220805165327090" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805165327090.png" /></p>
+<ul>
+<li>GPU:高度并行化处理器</li>
+</ul>
+<h2 id="texture-mapping">纹理映射Texture Mapping<a class="headerlink" href="#texture-mapping" title="Permanent link">&para;</a></h2>
+<ul>
+<li>作用:定义任何一个点的不同属性</li>
+<li>区别纹理和着色:纹理用于规定着色时不同点的属性</li>
+</ul>
+<p><img alt="image-20220805173254034" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805173254034.png" /></p>
+<ul>
+<li><strong>任何三维物体的表面都是二维的</strong></li>
+</ul>
+<p><img alt="image-20220805173424393" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805173424393.png" /></p>
+<ul>
+<li>纹理映射:将二维的图像蒙在三维物体表面</li>
+<li>前提条件:已知组成三维模型的三角形的每个顶点对应在二维贴图上的坐标</li>
+<li>再通过<strong>插值</strong>确定三角形内部每个点各自的属性</li>
+</ul>
+<p><img alt="image-20220805173910479" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805173910479.png" /></p>
+<ul>
+<li><strong>纹理上的坐标:UV</strong></li>
+<li>u,v的范围都是0~1</li>
+</ul>
+<p><img alt="image-20220805174221857" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805174221857.png" /></p>
+<p><img alt="image-20220805174245316" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220805174245316.png" /></p>
+<p>纹理所对应的UV图</p>
+<p>解释:为什么UV重复但是贴上纹理后边界没有明显分界?</p>
+<ul>
+<li>因为是无缝贴图(tilable texture),边界可以无缝衔接</li>
+</ul>
+<p>那如何在三角形内部进行插值?</p>
+<h3 id="barycentric-coordinates">重心坐标Barycentric Coordinates<a class="headerlink" href="#barycentric-coordinates" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220806104841298" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806104841298.png" /></p>
+<ul>
+<li>为什么需要插值?</li>
+<li>
+<p>需要确定三角形内部每个点的属性</p>
+</li>
+<li>
+<p>哪些属性需要插值?</p>
+</li>
+<li>纹理,颜色,法线向量</li>
+</ul>
+<p><img alt="image-20220806105114824" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806105114824.png" /></p>
+<ul>
+<li>一个三角形对应一套重心坐标</li>
+<li><strong>在三角形ABC所对应的平面上的任意一点都可以表示成ABC三个点的线性组合</strong></li>
+<li><strong>必须满足α+β+γ=1</strong></li>
+<li><strong>当αβγ都&gt;0时,点一定在三角形内</strong></li>
+<li>将αβγ作为一个点的坐标来描述点的位置</li>
+<li>因此不需要坐标系依然能够得到点的坐标</li>
+<li>已知αβγ中两个数就可以得到坐标(毕竟平面是二维的)</li>
+</ul>
+<p><img alt="image-20220806110106122" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806110106122.png" /></p>
+<ul>
+<li>三角形内点的重心坐标可以通过面积比得到</li>
+<li>面积可以通过叉乘得到:S=(absinc)/2</li>
+</ul>
+<p><img alt="image-20220806110325096" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806110325096.png" /></p>
+<ul>
+<li>通过面积的重心坐标定义可以得到:三角形重心的重心坐标为(1/3,1/3,1/3)</li>
+</ul>
+<p><img alt="image-20220806111005408" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806111005408.png" /></p>
+<ul>
+<li>给定坐标也能通过上述公式得到重心坐标</li>
+<li>没有必要记忆公式</li>
+</ul>
+<p><img alt="image-20220806115622708" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806115622708.png" /></p>
+<ul>
+<li>通过三个点属性的线性组合实现插值</li>
+<li>问题:<strong>三维图形投影以后重心坐标会发生变化!</strong></li>
+<li>因此插值需要在三维图形的重心坐标中计算,而不能在投影以后的二维坐标上运算</li>
+<li><strong>实际问题:在光栅化中必须先找到屏幕上的像素中心点所对应的三维图形的坐标,在三维图形上进行插值,最后逆变换回屏幕</strong></li>
+</ul>
+<h3 id="_45">纹理的应用<a class="headerlink" href="#_45" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220806163510051" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163510051.png" /></p>
+<ul>
+<li>利用重心坐标算出三维物体上点对应的UV值</li>
+<li>将三维物体上的点的UV对应到纹理上的UV</li>
+<li>根据纹理设定这个点的k~d~</li>
+</ul>
+<h4 id="1">问题1:纹理放大<a class="headerlink" href="#1" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220806163912014" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806163912014.png" /></p>
+<ul>
+<li>纹理分辨率太小而模型分辨率高导致纹理被放大</li>
+<li>
+<p>nearest:对获取到的模型坐标取最近的纹理元素(texel),使得一个像素周围的几个像素都对应相同的纹理元素</p>
+</li>
+<li>
+<p>效果不好,如左图</p>
+</li>
+</ul>
+<h4 id="bilinear">bilinear双线性插值<a class="headerlink" href="#bilinear" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220806165457351" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806165457351.png" /></p>
+<ul>
+<li>对于三维物体上的点无法一一对应到纹理元素上时</li>
+</ul>
+<p><img alt="image-20220806173914840" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806173914840.png" /></p>
+<ul>
+<li><strong>线性插值Lerp</strong>:对两个已知点,当x=0时线性插值结果为第一个点,x=1时线性插值结果为第二个点(见上图公式)</li>
+<li>
+<p>eg.x=0.5时,线性插值为两个点的中点</p>
+</li>
+<li>
+<p>以三维物体上的点四周的四个点为基准,以左下的纹理元素作为原点</p>
+</li>
+<li>先在上下两条边对三维物体上的点<strong>进行水平方向的线性插值</strong></li>
+<li>再<strong>用水平方向线性插值的结果计算该点竖直方向上的线性插值</strong>,得到双线性插值后的结果</li>
+<li>
+<p>最后效果为中间图</p>
+</li>
+<li>
+<p>bicubic:取周围的16个做线性插值</p>
+</li>
+</ul>
+<h4 id="2">问题2:纹理太大<a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220806191106794" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806191106794.png" /></p>
+<ul>
+<li>远处发生摩尔纹,近处发生走样</li>
+</ul>
+<p><img alt="image-20220806192212514" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220806192212514.png" /></p>
+<ul>
+<li>近处的像素覆盖纹理正常,远处的像素覆盖大量纹理</li>
+<li>远处的像素用像素中心采样导致走样:像素中心无法代表像素覆盖区域的值</li>
+</ul>
+<p><img alt="image-20220810154106540" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154106540.png" /></p>
+<ul>
+<li>使用超采样可以解决,但<strong>计算量太大</strong></li>
+</ul>
+<p><img alt="image-20220810154330370" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154330370.png" /></p>
+<ul>
+<li><strong>产生问题的根本原因</strong>:采样频率跟不上纹理出现的频率(纹理太大)</li>
+<li>思考:使用不采样的方法,直接得到像素区域内的平均值</li>
+</ul>
+<p><img alt="image-20220810154540077" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154540077.png" /></p>
+<ul>
+<li>范围查询:数据结构与算法的问题,具体算法有很多</li>
+</ul>
+<p><img alt="image-20220810154840721" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810154840721.png" /></p>
+<h4 id="mipmap"><strong>Mipmap</strong><a class="headerlink" href="#mipmap" title="Permanent link">&para;</a></h4>
+<p>根据图像,提前生成mipmap,每一层是上一层分辨率的一半</p>
+<ul>
+<li>可以范围查询</li>
+<li>查询速度快,结果不够准确,只能应用于方形范围</li>
+<li>mipmap的存储空间比原图大小多原图的1/3</li>
+<li>推导:1+1/4+1/16+.....</li>
+</ul>
+<p>如何得到已知像素应该去哪一层mipmap上查询对应纹理?</p>
+<p><img alt="image-20220810160111370" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810160111370.png" /></p>
+<p><img alt="image-20220810160144829" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810160144829.png" /></p>
+<ul>
+<li>将需要操作的像素的中心与其上方和右方的像素中心投影到纹理坐标上</li>
+<li>分别大致的计算出在纹理坐标上,需要操作的像素中心到上方像素中心 和 到右方像素中心的距离</li>
+<li>取两个距离中的最大值,命名为L</li>
+<li>以最大值为边长,近似该像素在纹理上所覆盖的区域</li>
+<li>在log~2~L层mipmap上找到该像素对应的平均值</li>
+</ul>
+<p><img alt="image-20220810161015935" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161015935.png" /></p>
+<ul>
+<li>按照上例计算,得到的像素的mipmap层数不连续</li>
+<li>会导致纹理不连续的缝隙</li>
+<li>思考:如何让查找的mipmap层数连续?(eg.找到第1.5层的mipmap)</li>
+</ul>
+<p><img alt="image-20220810161232682" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161232682.png" /></p>
+<h4 id="_46">三线性插值<a class="headerlink" href="#_46" title="Permanent link">&para;</a></h4>
+<ul>
+<li>对这个像素所得到层数(非整数)在前后两个整数的mipmap层数上先进行双线性插值</li>
+<li>对两个双线性插值的结果再做一次线性插值,得到最后的结果</li>
+<li>该算法应用广泛</li>
+</ul>
+<p>对比结果:</p>
+<p><img alt="image-20220810161902969" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810161902969.png" /></p>
+<p>使用mipmap的结果:</p>
+<p><img alt="image-20220810162016837" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162016837.png" /></p>
+<ul>
+<li>仍然存在问题:远处全部被糊掉(Overblur)</li>
+<li>原因:mipmap只能查找正方形区域,以及三线性插值也是一种近似,<strong>各种近似导致结果不准确</strong></li>
+</ul>
+<p>解决只能方形查询问题</p>
+<p><img alt="image-20220810162226453" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162226453.png" /></p>
+<h4 id="_47">各向异性过滤<a class="headerlink" href="#_47" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220810162621563" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162621563.png" /></p>
+<ul>
+<li>在mipmap的基础上,增加单独压缩长或宽的mipmap</li>
+<li>存储空间是原图的三倍</li>
+<li>各向异性:考虑不同的方向性</li>
+<li>参数:numX</li>
+<li>加载到第num层</li>
+<li>增加层数会稍微增加存储空间,但不多,与算力无关</li>
+</ul>
+<p><img alt="image-20220810162716004" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810162716004.png" /></p>
+<ul>
+<li>在实际情况中,<strong>一个像素可能对应的区域是矩形区域,导致用方形去近似结果不准</strong></li>
+<li>各向异性过滤使得矩形的区域结果更加准确</li>
+<li>但是! 对于斜着的矩形(如上图),仍然无法更加准确的去近似</li>
+<li><strong>因此,各向异性过滤只能解决部分问题</strong></li>
+</ul>
+<p><img alt="image-20220810163037353" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220810163037353.png" /></p>
+<ul>
+<li>EWA</li>
+<li>将不规则的形状分解成多个形状</li>
+<li>多次查询mipmap得到结果</li>
+<li><strong>效果好,计算量大</strong></li>
+</ul>
+<h4 id="_48">环境光照<a class="headerlink" href="#_48" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220820150005094" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150005094.png" /></p>
+<ul>
+<li>对于纹理的理解:相当于一块内存,可以进行范围查找</li>
+<li>纹理可以表示大量事物</li>
+</ul>
+<p><img alt="image-20220820150132695" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150132695.png" /></p>
+<ul>
+<li>环境光照,环境贴图</li>
+<li>我们可以用纹理去表示环境光如何</li>
+<li>使用纹理记录环境光的前提假设:环境光来自无穷远处,因此只记录光源的方向信息</li>
+</ul>
+<p><img alt="image-20220820150734315" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150734315.png" /></p>
+<ul>
+<li>环境光可以存储在球面上,并且能够展开</li>
+<li>相当于一个玻璃球在环境中产生的反射</li>
+</ul>
+<p><img alt="image-20220820150852454" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150852454.png" /></p>
+<p><img alt="image-20220820150927062" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820150927062.png" /></p>
+<ul>
+<li>环境光被记录在球上再展开</li>
+<li>问题:展开图的上边和下边产生向中间的扭曲</li>
+</ul>
+<p><img alt="image-20220820151123051" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151123051.png" /></p>
+<ul>
+<li>将光照信息存在球的包围盒上</li>
+<li>沿着原点到球面连线的延长线,将光照信息打到立方体表面</li>
+</ul>
+<p><img alt="image-20220820151327182" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151327182.png" /></p>
+<ul>
+<li>得到六张图</li>
+<li>效果由于球形</li>
+<li>仍有问题:查找没有球形环境光贴图快,但差距不大</li>
+</ul>
+<h4 id="_49">凹凸贴图/法线贴图<a class="headerlink" href="#_49" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220820151618415" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820151618415.png" /></p>
+<ul>
+<li>可以定义表面上的点的相对高度,沿着法线方向相差多少高度</li>
+<li>改变表面上的点的法线,从而影响着色的结果</li>
+</ul>
+<p><img alt="image-20220820152714425" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820152714425.png" /></p>
+<ul>
+<li>通过法线贴图改变纹理,而不改变物体的几何信息(物体的面数不变)</li>
+<li>纹理记录每个像素法线要变化的高度差,从而改变法线</li>
+<li>p为原来的法线,n为新的法线</li>
+<li>问题:如何计算n?</li>
+</ul>
+<p><img alt="image-20220820153747213" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820153747213.png" /></p>
+<ul>
+<li>前提:考虑物体在二维平面上,贴图是一维</li>
+<li>原本的法线为(0,1)</li>
+<li>计算该点在法线改变后的导数,求出切线</li>
+<li>导数通过横坐标加一的点与所求点的差除以1(横坐标变化1),乘以影响系数c得到切线的向量表示</li>
+<li>法线与切线垂直,将切线逆时针旋转90度得到法线(xy对换,并在x前加上负号)</li>
+<li>最后归一化为单位向量</li>
+</ul>
+<p><img alt="image-20220820154637707" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820154637707.png" /></p>
+<ul>
+<li>实际情况下物体三维,贴图两维</li>
+<li>由于贴图有两个方向,分别计算两个方向上的导数,得到两个方向上的切线</li>
+<li>通过切线求出法线,并归一化为单位向量</li>
+<li>实际情况下:法线不可能都是(0,0,1)</li>
+<li>解决方法:以局部坐标进行运算(这样法线都是0,0,1),计算出新的法线结果后再转换回世界坐标</li>
+</ul>
+<p><img alt="image-20220820154658831" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820154658831.png" /></p>
+<ul>
+<li>凹凸贴图的更现代化做法:位移贴图(displacment mapping)</li>
+<li>相同:都是用纹理定义表面上的点的相对高度</li>
+<li>不同:凹凸贴图通过计算出新的法线来影响结果,位移贴图真实的改变了物体的坐标</li>
+<li>位移贴图的优势:避免边缘形状的露馅,以及凸起部分的阴影对自身的影响</li>
+<li>位移贴图的缺点:对于模型的三角形面数要求高,必须比纹理定义的频率还要高</li>
+<li>解决方法:先用面数少的模型,在应用位移贴图时检测是否需要细分面数,如果需要再进行细分(DX的动态曲面细分)</li>
+</ul>
+<h4 id="_50">三维纹理<a class="headerlink" href="#_50" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220820155743766" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820155743766.png" /></p>
+<ul>
+<li>纹理也可以是三维的</li>
+<li>三维的纹理切开模型后可以看到内部</li>
+<li>通过三维空间的噪声函数定义纹理,并不是一张图</li>
+</ul>
+<p><img alt="image-20220820160545705" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820160545705.png" /></p>
+<ul>
+<li>使用三维贴图进行体积渲染</li>
+</ul>
+<h4 id="_51">环境光遮蔽<a class="headerlink" href="#_51" title="Permanent link">&para;</a></h4>
+<p><img alt="image-20220820160259436" src="https://jupiter-typora-pic.oss-cn-shanghai.aliyuncs.com/image-20220820160259436.png" /></p>
+<ul>
+<li>对于物体自身对于自身的着色影响,在着色过程中无法考虑到</li>
+<li>可以通过提前计算记录在纹理中应用</li>
+<li>也有实时的算法,叫环境光遮蔽</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 杨柳青
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/25244085" target="_blank" rel="noopener" title="Bilibili | 杨菊小米米" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0s16.1 2.868 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0c8.8 0 16.1 2.868 21.9 8.603 5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1zm-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8 6.3-6.5 9.7-14.3 10.1-23.5V173.8zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5-9.6 0-17.5-3.2-23.6-9.5-6.1-6.3-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2 6.3-6.3 13.2-9.6 23.3-10 9.2.4 17 3.7 23.3 10zm191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.1 6.3-14 9.5-23.6 9.5-9.6 0-17.4-3.2-23.6-9.5-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2 6.3-6.3 14.1-9.6 23.3-10 9.2.4 17 3.7 23.3 10z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/yjxmm9" target="_blank" rel="noopener" title="GitHub | yjxmm9" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "navigation.expand", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a7c05c9e.min.js"></script>
+      
+        <script src="../../../mkdocs/javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
