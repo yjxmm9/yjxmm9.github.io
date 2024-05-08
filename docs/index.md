@@ -8,7 +8,7 @@
 
 
 
-[![image](../image/1.jpg)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
+[![image](https://github.com/yjxmm9/yjxmm9.github.io/blob/main/image/1.jpg)](https://www.bilibili.com/video/BV1vH4y1G7KX/)
 
 
 
